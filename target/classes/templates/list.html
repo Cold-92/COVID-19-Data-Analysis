@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.com">
+<head>
+      <meta charset="UTF-8">
+      <title>中国各个省市数据统计</title>
+</head>
+<body>
+      <table>
+            <thead>
+                  <tr>
+                        <th>地区</th>
+                        <th>当前感染</th>
+                        <th>累计感染</th>
+                        <th>死亡</th>
+                        <th>治愈</th>
+                  </tr>
+            </thead>
+            <tbody>
+                  <tr th:each="bean:${beanList}">
+                        <td th:text="${bean.name}"></td>
+                        <td th:text="${bean.nowConfirm}"></td>
+                        <td th:text="${bean.confirm}"></td>
+                        <td th:text="${bean.dead}"></td>
+                        <td th:text="${bean.heal}"></td>
+                  </tr>
+            </tbody>
+      </table>
+</body>
+</html>

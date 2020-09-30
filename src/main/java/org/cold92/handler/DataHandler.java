@@ -1,36 +1,43 @@
 package org.cold92.handler;
 
 import com.google.gson.Gson;
+import org.apache.tomcat.util.net.jsse.JSSEUtil;
 import org.cold92.bean.DataBean;
+import org.cold92.util.HttpURLConnectionUtil;
 
-import java.io.File;
-import java.io.FileNotFoundException;
-import java.io.FileReader;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 
 public class DataHandler {
 
+    // 国内疫情数据源
+    public static String CHINA_DATA = "https://view.inews.qq.com/g2/getOnsInfo?name=disease_h5";
+
+    /**
+     * 解析爬虫获取的json数据并解析成bean
+     * @return
+     * @throws Exception
+     */
     public static List<DataBean> analysisJsonData() throws Exception {
-        // 读取数据文件流
-        FileReader reader = new FileReader(new File("originalData.txt"));
-        char[] temp = new char[512];
-        int length = 0;
-        StringBuffer dataStr = new StringBuffer();
+        // 解析json字符串成bean
         Gson gson = new Gson();
+        // 存放bean
         List<DataBean> beanList = new ArrayList<>();
-        while ((length = reader.read(temp)) != -1) {
-            dataStr.append(new String(temp, 0, length));
-        }
-        Map dataMap = gson.fromJson(dataStr.toString(), Map.class);
-        ArrayList areaTree = (ArrayList) dataMap.get("areaTree");
+        // 获取实时json数据
+        String responseJson = HttpURLConnectionUtil.doGet(CHINA_DATA);
+        Map responseMap = gson.fromJson(responseJson, Map.class);
+        // 接收到的json中data是以string的形式存储的，不是json
+        String dataStr = (String) responseMap.get("data");
+        Map data = gson.fromJson(dataStr, Map.class);
+        ArrayList areaTree = (ArrayList) data.get("areaTree");
         Map areaTreeElement = (Map) areaTree.get(0);
         ArrayList children = (ArrayList) areaTreeElement.get("children");
         for (int i = 0; i < children.size(); i++) {
             Map childrenMap = (Map) children.get(i);
             String name = (String) childrenMap.get("name");
             Map total = (Map) childrenMap.get("total");
+            // 解析数据
             double nowConfirm = (Double) total.get("nowConfirm");
             double confirm = (Double) total.get("confirm");
             double suspect = (Double) total.get("suspect");
