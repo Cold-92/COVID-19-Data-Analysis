@@ -3,9 +3,11 @@
 <head>
       <meta charset="UTF-8">
       <title>中国各个省市数据统计</title>
+      <link rel="stylesheet" th:href="@{css/bootstrap.css}">
 </head>
 <body>
-      <table>
+      <h1>中國個省份疫情數據統計</h1>
+      <table class="table table-hover">
             <thead>
                   <tr>
                         <th>地区</th>
@@ -17,7 +19,7 @@
             </thead>
             <tbody>
                   <tr th:each="bean:${beanList}">
-                        <td th:text="${bean.name}"></td>
+                        <td th:text="${bean.area}"></td>
                         <td th:text="${bean.nowConfirm}"></td>
                         <td th:text="${bean.confirm}"></td>
                         <td th:text="${bean.dead}"></td>

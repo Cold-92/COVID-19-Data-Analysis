@@ -4,23 +4,13 @@ import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
 import org.cold92.bean.DataBean;
 import org.cold92.handler.CloveDocDataHandler;
 import org.cold92.handler.TencentDataHandler;
+import org.cold92.mapper.DataMapper;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
 
 @Service
-public class DataServiceImpl implements DataService {
-
-    @Override
-    public List<DataBean> list() {
-        List<DataBean> beanList = null;
-        try {
-            beanList = CloveDocDataHandler.analysisHtmlData();
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
-        return beanList;
-    }
+public class DataServiceImpl extends ServiceImpl<DataMapper, DataBean> implements DataService {
 
     /**
      * 根據id的不同切換數據源,實現爬蟲的多數據源

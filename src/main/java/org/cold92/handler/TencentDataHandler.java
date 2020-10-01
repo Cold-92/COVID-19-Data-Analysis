@@ -2,8 +2,13 @@ package org.cold92.handler;
 
 import com.google.gson.Gson;
 import org.cold92.bean.DataBean;
+import org.cold92.service.DataService;
 import org.cold92.util.HttpURLConnectionUtil;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.scheduling.annotation.Scheduled;
+import org.springframework.stereotype.Component;
 
+import javax.annotation.PostConstruct;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
@@ -11,10 +16,47 @@ import java.util.Map;
 /**
  * 處理騰訊提供的數據源：響應回來的是純json數據
  */
+@Component
 public class TencentDataHandler {
 
     // 国内疫情数据源(騰訊)
     public static String CHINA_DATA_TENCENT = "https://view.inews.qq.com/g2/getOnsInfo?name=disease_h5";
+
+    @Autowired
+    private DataService dataService;
+
+    /**
+     * 數據持久化（選擇騰訊數據源初始化數據）
+     */
+    public void persistData() {
+        try {
+            List<DataBean> beanList = analysisJsonData();
+            // 每次持久化數據之前，先清空本地數據
+            dataService.remove(null);
+            // 持久化數據到本地
+            dataService.saveBatch(beanList);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+
+    /**
+     * 程序運行時，自動持久化實時數據
+     * @PostConstruct：該方法在服務器加載servlet時執行，只執行一次，在init()之前調用
+     */
+    @PostConstruct
+    public void initData() {
+        persistData();
+    }
+
+    /**
+     * 定時自動持久化實時數據 (每一個小時持久化數據一次)
+     * @Scheduled：使用cron表達式作爲參數進行定時執行方法操作
+     */
+    @Scheduled(cron = "1-59 0 0/1 * * ?")
+    public void updateData() {
+        persistData();
+    }
 
     /**
      * 解析爬虫获取的json数据并解析成bean
