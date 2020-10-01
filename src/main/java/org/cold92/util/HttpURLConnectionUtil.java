@@ -47,7 +47,7 @@ public class HttpURLConnectionUtil {
             reader = new BufferedReader(new InputStreamReader(inputStream, "UTF-8"));
             // 接收数据
             String line = null;
-            if ((line = reader.readLine()) != null) {
+            while ((line = reader.readLine()) != null) {
                 dataStr.append(line);
             }
         } catch (Exception e) {
@@ -65,9 +65,5 @@ public class HttpURLConnectionUtil {
             }
         }
         return dataStr.toString();
-    }
-
-    public static void main(String[] args) {
-        System.out.println(doGet("https://ncov.dxy.cn/ncovh5/view/pneumonia?scene=2&from=singlemessage&isappinstalled=0"));
     }
 }

@@ -2,11 +2,28 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="4d6679d1-4188-4f5b-a6a7-4028e50e61a0" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/cold92/util/HttpURLConnectionUtil.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/CloveDocOriginalData.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/cold92/handler/CloveDocDataHandler.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/cold92/mapper/DataMapper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/COVID-19-Data-Analysis.iml" beforeDir="false" afterPath="$PROJECT_DIR$/COVID-19-Data-Analysis.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data.txt" beforeDir="false" afterPath="$PROJECT_DIR$/tencentData.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/originalData.txt" beforeDir="false" afterPath="$PROJECT_DIR$/tencentOriginalData.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/cold92/DemoApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/cold92/DemoApplication.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/cold92/handler/DataHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/cold92/handler/DataHandler.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/org/cold92/DemoApplicationTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/org/cold92/DemoApplicationTests.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/cold92/bean/DataBean.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/cold92/bean/DataBean.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/cold92/controller/DataController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/cold92/controller/DataController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/cold92/handler/DataHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/cold92/handler/TencentDataHandler.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/cold92/service/DataService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/cold92/service/DataService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/cold92/service/DataServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/cold92/service/DataServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/cold92/util/HttpURLConnectionUtil.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/cold92/util/HttpURLConnectionUtil.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/org/cold92/DemoApplication.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/org/cold92/DemoApplication.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/org/cold92/controller/DataController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/org/cold92/controller/DataController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/org/cold92/handler/DataHandler.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/org/cold92/service/DataService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/org/cold92/service/DataService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/org/cold92/service/DataServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/org/cold92/service/DataServiceImpl.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/org/cold92/util/HttpURLConnectionUtil.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/org/cold92/util/HttpURLConnectionUtil.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -16,9 +33,9 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Interface" />
-        <option value="Class" />
         <option value="HTML File" />
+        <option value="Class" />
+        <option value="Interface" />
       </list>
     </option>
   </component>
@@ -33,7 +50,7 @@
   <component name="PropertiesComponent">
     <property name="DefaultHtmlFileTemplate" value="HTML File" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="F:/javaProject/springboot-demo" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
@@ -41,7 +58,19 @@
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
     <property name="settings.editor.selected.configurable" value="preferences.keymap" />
   </component>
-  <component name="RunManager" selected="Application.HttpURLConnectionUtil">
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="F:\git\gitSource\COVID-19-Data-Analysis" />
+    </key>
+  </component>
+  <component name="RunManager" selected="Application.DemoApplication">
+    <configuration name="CloveDocDataHandler" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="org.cold92.handler.CloveDocDataHandler" />
+      <module name="COVID-19-Data-Analysis" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="DemoApplication" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="org.cold92.DemoApplication" />
       <module name="COVID-19-Data-Analysis" />
@@ -58,8 +87,9 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.HttpURLConnectionUtil" />
         <item itemvalue="Application.DemoApplication" />
+        <item itemvalue="Application.CloveDocDataHandler" />
+        <item itemvalue="Application.HttpURLConnectionUtil" />
       </list>
     </recent_temporary>
   </component>
@@ -81,78 +111,119 @@
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
   </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="1">
+          <value>
+            <State>
+              <option name="SHOW_ONLY_AFFECTED_CHANGES" value="true" />
+              <option name="FILTERS">
+                <map>
+                  <entry key="branch">
+                    <value>
+                      <list>
+                        <option value="HEAD" />
+                      </list>
+                    </value>
+                  </entry>
+                  <entry key="roots">
+                    <value>
+                      <list>
+                        <option value="$PROJECT_DIR$" />
+                      </list>
+                    </value>
+                  </entry>
+                </map>
+              </option>
+            </State>
+          </value>
+        </entry>
+      </map>
+    </option>
+    <option name="OPEN_TABS">
+      <set>
+        <option value="1" />
+      </set>
+    </option>
+  </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="1.1: 手动拉取疫情数据并展示" />
-    <option name="LAST_COMMIT_MESSAGE" value="1.1: 手动拉取疫情数据并展示" />
+    <MESSAGE value="1.2: 搭建Http请求拉取实时信息" />
+    <option name="LAST_COMMIT_MESSAGE" value="1.2: 搭建Http请求拉取实时信息" />
   </component>
   <component name="WindowStateProjectService">
     <state x="140" y="92" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1601463352448">
       <screen x="0" y="0" width="1368" height="872" />
     </state>
     <state x="140" y="92" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1368.872@0.0.1368.872" timestamp="1601463352448" />
-    <state x="466" y="148" key="#com.intellij.ide.util.MemberChooser" timestamp="1601428797058">
+    <state x="0" y="558" key="#com.intellij.ide.actions.DebugLogConfigureAction" timestamp="1601517781942">
       <screen x="0" y="0" width="1368" height="872" />
     </state>
-    <state x="466" y="148" key="#com.intellij.ide.util.MemberChooser/0.0.1368.872@0.0.1368.872" timestamp="1601428797058" />
+    <state x="0" y="558" key="#com.intellij.ide.actions.DebugLogConfigureAction/0.0.1368.872@0.0.1368.872" timestamp="1601517781942" />
+    <state x="466" y="148" key="#com.intellij.ide.util.MemberChooser" timestamp="1601535798146">
+      <screen x="0" y="0" width="1368" height="872" />
+    </state>
+    <state x="466" y="148" key="#com.intellij.ide.util.MemberChooser/0.0.1368.872@0.0.1368.872" timestamp="1601535798146" />
     <state x="361" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog" timestamp="1601400345154">
       <screen x="0" y="0" width="1368" height="872" />
     </state>
     <state x="361" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog/0.0.1368.872@0.0.1368.872" timestamp="1601400345154" />
-    <state x="297" y="27" key="CommitChangelistDialog2" timestamp="1601434011270">
+    <state x="297" y="27" key="CommitChangelistDialog2" timestamp="1601470149939">
       <screen x="0" y="0" width="1368" height="872" />
     </state>
-    <state x="297" y="27" key="CommitChangelistDialog2/0.0.1368.872@0.0.1368.872" timestamp="1601434011270" />
-    <state x="465" y="192" key="FileChooserDialogImpl" timestamp="1601431309766">
+    <state x="297" y="27" key="CommitChangelistDialog2/0.0.1368.872@0.0.1368.872" timestamp="1601470149939" />
+    <state x="465" y="192" key="FileChooserDialogImpl" timestamp="1601536824311">
       <screen x="0" y="0" width="1368" height="872" />
     </state>
-    <state x="465" y="192" key="FileChooserDialogImpl/0.0.1368.872@0.0.1368.872" timestamp="1601431309766" />
-    <state width="1326" height="114" key="GridCell.Tab.0.bottom" timestamp="1601468310097">
+    <state x="465" y="192" key="FileChooserDialogImpl/0.0.1368.872@0.0.1368.872" timestamp="1601536824311" />
+    <state width="1326" height="268" key="GridCell.Tab.0.bottom" timestamp="1601536382303">
       <screen x="0" y="0" width="1368" height="872" />
     </state>
-    <state width="1326" height="114" key="GridCell.Tab.0.bottom/0.0.1368.872@0.0.1368.872" timestamp="1601468310097" />
-    <state width="1326" height="114" key="GridCell.Tab.0.center" timestamp="1601468310097">
+    <state width="1326" height="268" key="GridCell.Tab.0.bottom/0.0.1368.872@0.0.1368.872" timestamp="1601536382303" />
+    <state width="1326" height="268" key="GridCell.Tab.0.center" timestamp="1601536382303">
       <screen x="0" y="0" width="1368" height="872" />
     </state>
-    <state width="1326" height="114" key="GridCell.Tab.0.center/0.0.1368.872@0.0.1368.872" timestamp="1601468310097" />
-    <state width="1326" height="114" key="GridCell.Tab.0.left" timestamp="1601468310097">
+    <state width="1326" height="268" key="GridCell.Tab.0.center/0.0.1368.872@0.0.1368.872" timestamp="1601536382303" />
+    <state width="1326" height="268" key="GridCell.Tab.0.left" timestamp="1601536382303">
       <screen x="0" y="0" width="1368" height="872" />
     </state>
-    <state width="1326" height="114" key="GridCell.Tab.0.left/0.0.1368.872@0.0.1368.872" timestamp="1601468310097" />
-    <state width="1326" height="114" key="GridCell.Tab.0.right" timestamp="1601468310097">
+    <state width="1326" height="268" key="GridCell.Tab.0.left/0.0.1368.872@0.0.1368.872" timestamp="1601536382303" />
+    <state width="1326" height="268" key="GridCell.Tab.0.right" timestamp="1601536382303">
       <screen x="0" y="0" width="1368" height="872" />
     </state>
-    <state width="1326" height="114" key="GridCell.Tab.0.right/0.0.1368.872@0.0.1368.872" timestamp="1601468310097" />
-    <state width="1326" height="56" key="GridCell.Tab.1.bottom" timestamp="1601464175126">
+    <state width="1326" height="268" key="GridCell.Tab.0.right/0.0.1368.872@0.0.1368.872" timestamp="1601536382303" />
+    <state width="1326" height="268" key="GridCell.Tab.1.bottom" timestamp="1601536382303">
       <screen x="0" y="0" width="1368" height="872" />
     </state>
-    <state width="1326" height="56" key="GridCell.Tab.1.bottom/0.0.1368.872@0.0.1368.872" timestamp="1601464175126" />
-    <state width="1326" height="56" key="GridCell.Tab.1.center" timestamp="1601464175126">
+    <state width="1326" height="268" key="GridCell.Tab.1.bottom/0.0.1368.872@0.0.1368.872" timestamp="1601536382303" />
+    <state width="1326" height="268" key="GridCell.Tab.1.center" timestamp="1601536382303">
       <screen x="0" y="0" width="1368" height="872" />
     </state>
-    <state width="1326" height="56" key="GridCell.Tab.1.center/0.0.1368.872@0.0.1368.872" timestamp="1601464175126" />
-    <state width="1326" height="56" key="GridCell.Tab.1.left" timestamp="1601464175126">
+    <state width="1326" height="268" key="GridCell.Tab.1.center/0.0.1368.872@0.0.1368.872" timestamp="1601536382303" />
+    <state width="1326" height="268" key="GridCell.Tab.1.left" timestamp="1601536382303">
       <screen x="0" y="0" width="1368" height="872" />
     </state>
-    <state width="1326" height="56" key="GridCell.Tab.1.left/0.0.1368.872@0.0.1368.872" timestamp="1601464175126" />
-    <state width="1326" height="56" key="GridCell.Tab.1.right" timestamp="1601464175126">
+    <state width="1326" height="268" key="GridCell.Tab.1.left/0.0.1368.872@0.0.1368.872" timestamp="1601536382303" />
+    <state width="1326" height="268" key="GridCell.Tab.1.right" timestamp="1601536382303">
       <screen x="0" y="0" width="1368" height="872" />
     </state>
-    <state width="1326" height="56" key="GridCell.Tab.1.right/0.0.1368.872@0.0.1368.872" timestamp="1601464175126" />
+    <state width="1326" height="268" key="GridCell.Tab.1.right/0.0.1368.872@0.0.1368.872" timestamp="1601536382303" />
     <state x="186" y="79" key="SettingsEditor" timestamp="1601469615976">
       <screen x="0" y="0" width="1368" height="872" />
     </state>
     <state x="186" y="79" key="SettingsEditor/0.0.1368.872@0.0.1368.872" timestamp="1601469615976" />
-    <state x="278" y="170" key="Vcs.Push.Dialog.v2" timestamp="1601434075099">
+    <state x="278" y="170" key="Vcs.Push.Dialog.v2" timestamp="1601470161552">
       <screen x="0" y="0" width="1368" height="872" />
     </state>
-    <state x="278" y="170" key="Vcs.Push.Dialog.v2/0.0.1368.872@0.0.1368.872" timestamp="1601434075099" />
-    <state x="368" y="261" key="com.intellij.ide.util.TipDialog" timestamp="1601454288130">
+    <state x="278" y="170" key="Vcs.Push.Dialog.v2/0.0.1368.872@0.0.1368.872" timestamp="1601470161552" />
+    <state x="368" y="261" key="com.intellij.ide.util.TipDialog" timestamp="1601536618506">
       <screen x="0" y="0" width="1368" height="872" />
     </state>
-    <state x="368" y="261" key="com.intellij.ide.util.TipDialog/0.0.1368.872@0.0.1368.872" timestamp="1601454288130" />
-    <state x="349" y="186" width="672" height="678" key="search.everywhere.popup" timestamp="1601468523235">
+    <state x="368" y="261" key="com.intellij.ide.util.TipDialog/0.0.1368.872@0.0.1368.872" timestamp="1601536618506" />
+    <state x="350" y="187" width="672" height="678" key="search.everywhere.popup" timestamp="1601518565941">
       <screen x="0" y="0" width="1368" height="872" />
     </state>
-    <state x="349" y="186" width="672" height="678" key="search.everywhere.popup/0.0.1368.872@0.0.1368.872" timestamp="1601468523235" />
+    <state x="350" y="187" width="672" height="678" key="search.everywhere.popup/0.0.1368.872@0.0.1368.872" timestamp="1601518565941" />
   </component>
 </project>

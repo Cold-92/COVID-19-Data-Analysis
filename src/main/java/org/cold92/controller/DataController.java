@@ -7,20 +7,28 @@ import org.springframework.stereotype.Component;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import java.util.List;
 
 @Controller
-@RequestMapping("/covid")
+@RequestMapping("/")
 public class DataController {
 
     @Autowired
     private DataService dataService;
 
-    @GetMapping
+    @GetMapping("/list")
     public String list(Model model) {
         List<DataBean> beanList = dataService.list();
+        model.addAttribute("beanList", beanList);
+        return "list.html";
+    }
+
+    @GetMapping("/list/{id}")
+    public String listById(Model model, @PathVariable int id) {
+        List<DataBean> beanList = dataService.listById(id);
         model.addAttribute("beanList", beanList);
         return "list.html";
     }

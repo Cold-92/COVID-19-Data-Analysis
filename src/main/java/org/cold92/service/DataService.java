@@ -7,4 +7,6 @@ import java.util.List;
 public interface DataService {
 
     List<DataBean> list();
+
+    List<DataBean> listById(int id);
 }

@@ -1,11 +1,11 @@
 server:
-  port: 8088
+  port: 8080
 
 
 spring:
   # 配置mysql,根据url自动识别Driver
   datasource:
-    url: jdbc:mysql://localhost:3306/test?characterEncoding=utf8&useSSL=false&serverTimezone=UTC
+    url: jdbc:mysql://localhost:3306/covid?characterEncoding=utf8&useSSL=false&serverTimezone=UTC
     username: root
     password: 13013005866
   #解决springboot不能处理put和delete请求
