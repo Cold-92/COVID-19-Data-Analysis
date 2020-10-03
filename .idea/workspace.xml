@@ -2,22 +2,32 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="4d6679d1-4188-4f5b-a6a7-4028e50e61a0" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/resources/static/css/bootstrap.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/cold92/bean/SingleChartBean.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/cold92/util/HttpClientUtil.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/js/echarts.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/singleLineChart.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tencentChartData.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/COVID-19-Data-Analysis.iml" beforeDir="false" afterPath="$PROJECT_DIR$/COVID-19-Data-Analysis.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CloveDocOriginalData.txt" beforeDir="false" afterPath="$PROJECT_DIR$/CloveDocTotalData.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/cold92/DemoApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/cold92/DemoApplication.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/cold92/controller/DataController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/cold92/controller/DataController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/cold92/handler/CloveDocDataHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/cold92/handler/CloveDocDataHandler.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/cold92/handler/TencentDataHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/cold92/handler/TencentDataHandler.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/cold92/service/DataService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/cold92/service/DataService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/cold92/service/DataServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/cold92/service/DataServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/cold92/util/HttpURLConnectionUtil.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/cold92/util/HttpURLConnectionUtil.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/templates/list.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/list.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/application.yml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/org/cold92/DemoApplication.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/org/cold92/DemoApplication.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/org/cold92/bean/DataBean.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/org/cold92/bean/DataBean.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/org/cold92/controller/DataController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/org/cold92/controller/DataController.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/org/cold92/handler/CloveDocDataHandler.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/org/cold92/handler/CloveDocDataHandler.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/org/cold92/handler/TencentDataHandler.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/org/cold92/handler/TencentDataHandler.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/org/cold92/service/DataService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/org/cold92/service/DataService.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/org/cold92/service/DataServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/org/cold92/service/DataServiceImpl.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/templates/CloveDocOriginalData.html" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/templates/list.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/templates/list.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tencentData.txt" beforeDir="false" afterPath="$PROJECT_DIR$/tencentTotalData.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tencentOriginalData.txt" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -28,8 +38,8 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="HTML File" />
-        <option value="Class" />
         <option value="Interface" />
+        <option value="Class" />
       </list>
     </option>
   </component>
@@ -44,7 +54,7 @@
   <component name="PropertiesComponent">
     <property name="DefaultHtmlFileTemplate" value="HTML File" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
-    <property name="last_opened_file_path" value="F:/javaProject/springboot-demo" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/main/resources/static/js" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
@@ -53,13 +63,14 @@
     <property name="settings.editor.selected.configurable" value="preferences.keymap" />
   </component>
   <component name="RecentsManager">
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="F:\git\gitSource\COVID-19-Data-Analysis\src\main\resources\static" />
-    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="F:\git\gitSource\COVID-19-Data-Analysis\src\main\resources\static\css" />
       <recent name="F:\git\gitSource\COVID-19-Data-Analysis\src\main\resources\static" />
       <recent name="F:\git\gitSource\COVID-19-Data-Analysis" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="F:\git\gitSource\COVID-19-Data-Analysis\src\main\resources\static\js" />
+      <recent name="F:\git\gitSource\COVID-19-Data-Analysis\src\main\resources\static" />
     </key>
   </component>
   <component name="RunManager" selected="Application.DemoApplication">
@@ -77,8 +88,22 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="HttpClientUtil" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="org.cold92.util.HttpClientUtil" />
+      <module name="COVID-19-Data-Analysis" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="HttpURLConnectionUtil" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="org.cold92.util.HttpURLConnectionUtil" />
+      <module name="COVID-19-Data-Analysis" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="TencentDataHandler" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="org.cold92.handler.TencentDataHandler" />
       <module name="COVID-19-Data-Analysis" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -87,6 +112,8 @@
     <recent_temporary>
       <list>
         <item itemvalue="Application.DemoApplication" />
+        <item itemvalue="Application.TencentDataHandler" />
+        <item itemvalue="Application.HttpClientUtil" />
         <item itemvalue="Application.CloveDocDataHandler" />
         <item itemvalue="Application.HttpURLConnectionUtil" />
       </list>
@@ -150,7 +177,8 @@
     <MESSAGE value="1.1: 手动拉取疫情数据并展示" />
     <MESSAGE value="1.2: 搭建Http请求拉取实时信息" />
     <MESSAGE value="1.3: 完善處理json數據和html數據的解析，實現爬蟲的多數據源" />
-    <option name="LAST_COMMIT_MESSAGE" value="1.3: 完善處理json數據和html數據的解析，實現爬蟲的多數據源" />
+    <MESSAGE value="1.4: 實現數據的實時更新" />
+    <option name="LAST_COMMIT_MESSAGE" value="1.4: 實現數據的實時更新" />
   </component>
   <component name="WindowStateProjectService">
     <state x="140" y="92" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1601463352448">
@@ -169,58 +197,58 @@
       <screen x="0" y="0" width="1368" height="872" />
     </state>
     <state x="361" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog/0.0.1368.872@0.0.1368.872" timestamp="1601400345154" />
-    <state x="297" y="27" key="CommitChangelistDialog2" timestamp="1601539679352">
+    <state x="297" y="27" key="CommitChangelistDialog2" timestamp="1601545143453">
       <screen x="0" y="0" width="1368" height="872" />
     </state>
-    <state x="297" y="27" key="CommitChangelistDialog2/0.0.1368.872@0.0.1368.872" timestamp="1601539679352" />
+    <state x="297" y="27" key="CommitChangelistDialog2/0.0.1368.872@0.0.1368.872" timestamp="1601545143453" />
     <state x="465" y="192" key="FileChooserDialogImpl" timestamp="1601543113745">
       <screen x="0" y="0" width="1368" height="872" />
     </state>
     <state x="465" y="192" key="FileChooserDialogImpl/0.0.1368.872@0.0.1368.872" timestamp="1601543113745" />
-    <state width="1326" height="108" key="GridCell.Tab.0.bottom" timestamp="1601544916904">
+    <state width="1326" height="52" key="GridCell.Tab.0.bottom" timestamp="1601691976804">
       <screen x="0" y="0" width="1368" height="872" />
     </state>
-    <state width="1326" height="108" key="GridCell.Tab.0.bottom/0.0.1368.872@0.0.1368.872" timestamp="1601544916904" />
-    <state width="1326" height="108" key="GridCell.Tab.0.center" timestamp="1601544916904">
+    <state width="1326" height="52" key="GridCell.Tab.0.bottom/0.0.1368.872@0.0.1368.872" timestamp="1601691976804" />
+    <state width="1326" height="52" key="GridCell.Tab.0.center" timestamp="1601691976804">
       <screen x="0" y="0" width="1368" height="872" />
     </state>
-    <state width="1326" height="108" key="GridCell.Tab.0.center/0.0.1368.872@0.0.1368.872" timestamp="1601544916904" />
-    <state width="1326" height="108" key="GridCell.Tab.0.left" timestamp="1601544916903">
+    <state width="1326" height="52" key="GridCell.Tab.0.center/0.0.1368.872@0.0.1368.872" timestamp="1601691976804" />
+    <state width="1326" height="52" key="GridCell.Tab.0.left" timestamp="1601691976803">
       <screen x="0" y="0" width="1368" height="872" />
     </state>
-    <state width="1326" height="108" key="GridCell.Tab.0.left/0.0.1368.872@0.0.1368.872" timestamp="1601544916903" />
-    <state width="1326" height="108" key="GridCell.Tab.0.right" timestamp="1601544916904">
+    <state width="1326" height="52" key="GridCell.Tab.0.left/0.0.1368.872@0.0.1368.872" timestamp="1601691976803" />
+    <state width="1326" height="52" key="GridCell.Tab.0.right" timestamp="1601691976804">
       <screen x="0" y="0" width="1368" height="872" />
     </state>
-    <state width="1326" height="108" key="GridCell.Tab.0.right/0.0.1368.872@0.0.1368.872" timestamp="1601544916904" />
-    <state width="1326" height="268" key="GridCell.Tab.1.bottom" timestamp="1601536382303">
+    <state width="1326" height="52" key="GridCell.Tab.0.right/0.0.1368.872@0.0.1368.872" timestamp="1601691976804" />
+    <state width="1312" height="264" key="GridCell.Tab.1.bottom" timestamp="1601646622504">
       <screen x="0" y="0" width="1368" height="872" />
     </state>
-    <state width="1326" height="268" key="GridCell.Tab.1.bottom/0.0.1368.872@0.0.1368.872" timestamp="1601536382303" />
-    <state width="1326" height="268" key="GridCell.Tab.1.center" timestamp="1601536382303">
+    <state width="1312" height="264" key="GridCell.Tab.1.bottom/0.0.1368.872@0.0.1368.872" timestamp="1601646622504" />
+    <state width="1312" height="264" key="GridCell.Tab.1.center" timestamp="1601646622504">
       <screen x="0" y="0" width="1368" height="872" />
     </state>
-    <state width="1326" height="268" key="GridCell.Tab.1.center/0.0.1368.872@0.0.1368.872" timestamp="1601536382303" />
-    <state width="1326" height="268" key="GridCell.Tab.1.left" timestamp="1601536382303">
+    <state width="1312" height="264" key="GridCell.Tab.1.center/0.0.1368.872@0.0.1368.872" timestamp="1601646622504" />
+    <state width="1312" height="264" key="GridCell.Tab.1.left" timestamp="1601646622504">
       <screen x="0" y="0" width="1368" height="872" />
     </state>
-    <state width="1326" height="268" key="GridCell.Tab.1.left/0.0.1368.872@0.0.1368.872" timestamp="1601536382303" />
-    <state width="1326" height="268" key="GridCell.Tab.1.right" timestamp="1601536382303">
+    <state width="1312" height="264" key="GridCell.Tab.1.left/0.0.1368.872@0.0.1368.872" timestamp="1601646622504" />
+    <state width="1312" height="264" key="GridCell.Tab.1.right" timestamp="1601646622504">
       <screen x="0" y="0" width="1368" height="872" />
     </state>
-    <state width="1326" height="268" key="GridCell.Tab.1.right/0.0.1368.872@0.0.1368.872" timestamp="1601536382303" />
+    <state width="1312" height="264" key="GridCell.Tab.1.right/0.0.1368.872@0.0.1368.872" timestamp="1601646622504" />
     <state x="186" y="79" key="SettingsEditor" timestamp="1601469615976">
       <screen x="0" y="0" width="1368" height="872" />
     </state>
     <state x="186" y="79" key="SettingsEditor/0.0.1368.872@0.0.1368.872" timestamp="1601469615976" />
-    <state x="278" y="170" key="Vcs.Push.Dialog.v2" timestamp="1601539691458">
+    <state x="278" y="170" key="Vcs.Push.Dialog.v2" timestamp="1601545152430">
       <screen x="0" y="0" width="1368" height="872" />
     </state>
-    <state x="278" y="170" key="Vcs.Push.Dialog.v2/0.0.1368.872@0.0.1368.872" timestamp="1601539691458" />
-    <state x="368" y="261" key="com.intellij.ide.util.TipDialog" timestamp="1601536618506">
+    <state x="278" y="170" key="Vcs.Push.Dialog.v2/0.0.1368.872@0.0.1368.872" timestamp="1601545152430" />
+    <state x="368" y="261" key="com.intellij.ide.util.TipDialog" timestamp="1601686947159">
       <screen x="0" y="0" width="1368" height="872" />
     </state>
-    <state x="368" y="261" key="com.intellij.ide.util.TipDialog/0.0.1368.872@0.0.1368.872" timestamp="1601536618506" />
+    <state x="368" y="261" key="com.intellij.ide.util.TipDialog/0.0.1368.872@0.0.1368.872" timestamp="1601686947159" />
     <state x="350" y="187" width="672" height="678" key="search.everywhere.popup" timestamp="1601518565941">
       <screen x="0" y="0" width="1368" height="872" />
     </state>

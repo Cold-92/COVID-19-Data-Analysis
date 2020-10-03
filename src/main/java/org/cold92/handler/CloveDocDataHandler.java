@@ -16,21 +16,21 @@ import java.util.Map;
  */
 public class CloveDocDataHandler {
 
-    // 国内疫情数据源(丁香醫生)
-    public static String CHINA_DATA_CLOVEDOC = "https://ncov.dxy.cn/ncovh5/view/pneumonia?scene=2&from=singlemessage&isappinstalled=0";
+    // 国内各省份总体疫情数据源(丁香醫生)
+    public static String CHINA_TOTAL_DATA_CLOVEDOC = "https://ncov.dxy.cn/ncovh5/view/pneumonia?scene=2&from=singlemessage&isappinstalled=0";
 
     /**
-     * 使用Jsoup解析響應回來的html數據
+     * 获取的中国各个省份疫情的html数据并通过jsoup+gson解析成bean
      * @return
      * @throws Exception
      */
-    public static List<DataBean> analysisHtmlData() throws Exception {
+    public static List<DataBean> getTotalData() throws Exception {
         // 解析json字符串成bean
         Gson gson = new Gson();
         // 存放bean
         List<DataBean> beanList = new ArrayList<>();
         // 獲取疫情數據
-        String responseHtml = HttpURLConnectionUtil.doGet(CHINA_DATA_CLOVEDOC);
+        String responseHtml = HttpURLConnectionUtil.doGet(CHINA_TOTAL_DATA_CLOVEDOC);
         // 解析html數據
         Document document = Jsoup.parse(responseHtml);
         Element script = document.getElementById("getAreaStat");

@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.com">
+<head>
+      <meta charset="UTF-8">
+      <title>中国疫情数据统计单条折线图</title>
+      <script type="text/javascript" src="js/echarts.min.js"></script>
+</head>
+<body>
+      <!-- 为 ECharts 准备一个具备大小（宽高）的 DOM -->
+      <div id="main" style="width: 600px;height:400px;"></div>
+
+      <!-- th:inline作用是让js中也能使用thymeleaf实现动态数据传输 -->
+      <script type="text/javascript" th:inline="javascript">
+          // 基于准备好的dom，初始化echarts实例
+          let myChart = echarts.init(document.getElementById('main'));
+          // 使用thymeleaf接收后端传输的json数据
+          let dateListStr = [[${dateList}]];
+          let nowConfirmListStr = [[${nowConfirmList}]];
+          // 指定图表的配置项和数据
+          let option = {
+              // 标题组件
+              title: {
+                  text: '中国疫情数据统计单条折线图'
+              },
+              // 提示框组件
+              tooltip: {
+                  trigger: 'axis'
+              },
+              // 曲线含义说明
+              legend: {
+                  data: ['现有确诊']
+              },
+              xAxis: {
+                  type: 'category',
+                  boundaryGap: false,
+                  data: JSON.parse(dateListStr)
+                  // data: ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun']
+              },
+              yAxis: {
+                  type: 'value'
+              },
+              series: [{
+                  name: '现有确诊',
+                  data: JSON.parse(nowConfirmListStr),
+                  // data: [820, 932, 901, 934, 1290, 1330, 1320],
+                  type: 'line',
+                  areaStyle: {}
+              }]
+          };
+          // 使用刚指定的配置项和数据显示图表。
+          myChart.setOption(option);
+      </script>
+</body>
+</html>

@@ -9,7 +9,7 @@ import java.net.URL;
 public class HttpURLConnectionUtil {
 
     /**
-     * 从程序中发起Http请求,获取实时数据
+     * 手动搭建原生Http请求,获取网站数据
      * @param urlStr Http请求的url
      * @return
      */

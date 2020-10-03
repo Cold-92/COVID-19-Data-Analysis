@@ -2,7 +2,9 @@ package org.cold92.handler;
 
 import com.google.gson.Gson;
 import org.cold92.bean.DataBean;
+import org.cold92.bean.SingleChartBean;
 import org.cold92.service.DataService;
+import org.cold92.util.HttpClientUtil;
 import org.cold92.util.HttpURLConnectionUtil;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.scheduling.annotation.Scheduled;
@@ -19,8 +21,11 @@ import java.util.Map;
 @Component
 public class TencentDataHandler {
 
-    // 国内疫情数据源(騰訊)
-    public static String CHINA_DATA_TENCENT = "https://view.inews.qq.com/g2/getOnsInfo?name=disease_h5";
+    // 国内各省份总体疫情数据源(腾讯)
+    public static String CHINA_TOTAL_DATA_TENCENT = "https://view.inews.qq.com/g2/getOnsInfo?name=disease_h5";
+
+    // 单条折线图数据源
+    private static String SINGLE_LINE_CHART_DATA = "https://view.inews.qq.com/g2/getOnsInfo?name=disease_other";
 
     @Autowired
     private DataService dataService;
@@ -30,7 +35,7 @@ public class TencentDataHandler {
      */
     public void persistData() {
         try {
-            List<DataBean> beanList = analysisJsonData();
+            List<DataBean> beanList = getTotalData();
             // 每次持久化數據之前，先清空本地數據
             dataService.remove(null);
             // 持久化數據到本地
@@ -59,24 +64,24 @@ public class TencentDataHandler {
     }
 
     /**
-     * 解析爬虫获取的json数据并解析成bean
+     * 获取中国各个省份疫情的json数据并通过gson解析成bean
      * @return
      * @throws Exception
      */
-    public static List<DataBean> analysisJsonData() throws Exception {
+    public static List<DataBean> getTotalData() throws Exception {
         // 解析json字符串成bean
         Gson gson = new Gson();
         // 存放bean
         List<DataBean> beanList = new ArrayList<>();
         // 获取实时json数据
-        String responseJson = HttpURLConnectionUtil.doGet(CHINA_DATA_TENCENT);
+        String responseJson = HttpURLConnectionUtil.doGet(CHINA_TOTAL_DATA_TENCENT);
         Map responseMap = gson.fromJson(responseJson, Map.class);
         // 接收到的json中data是以string的形式存储的，不是json
         String dataStr = (String) responseMap.get("data");
         Map data = gson.fromJson(dataStr, Map.class);
-        ArrayList areaTree = (ArrayList) data.get("areaTree");
+        List areaTree = (ArrayList) data.get("areaTree");
         Map areaTreeElement = (Map) areaTree.get(0);
-        ArrayList children = (ArrayList) areaTreeElement.get("children");
+        List children = (ArrayList) areaTreeElement.get("children");
         for (int i = 0; i < children.size(); i++) {
             Map childrenMap = (Map) children.get(i);
             String area = (String) childrenMap.get("name");
@@ -94,6 +99,31 @@ public class TencentDataHandler {
             bean.setSuspect((int) suspect);
             bean.setDead((int) dead);
             bean.setHeal((int) heal);
+            beanList.add(bean);
+        }
+        return beanList;
+    }
+
+    /**
+     * 获取单条折线图的json实时数据并通过gson解析成bean
+     * @return
+     */
+    public static List<SingleChartBean> getSingleChartData() {
+        Gson gson = new Gson();
+        List<SingleChartBean> beanList = new ArrayList<>();
+        // 使用HttpClient封装的http请求获取的数据
+        String responseJson = HttpClientUtil.doGet(SINGLE_LINE_CHART_DATA);
+        Map responseMap = gson.fromJson(responseJson, Map.class);
+        String dataStr = (String) responseMap.get("data");
+        Map data = gson.fromJson(dataStr, Map.class);
+        List chinaDayList = (ArrayList) data.get("chinaDayList");
+        for (int i = 0; i < chinaDayList.size(); i++) {
+            Map chinaDayMap = (Map) chinaDayList.get(i);
+            String date = (String) chinaDayMap.get("date");
+            double nowConfirm = (Double) chinaDayMap.get("nowConfirm");
+            SingleChartBean bean = new SingleChartBean();
+            bean.setDate(date);
+            bean.setNowConfirm((int) nowConfirm);
             beanList.add(bean);
         }
         return beanList;
