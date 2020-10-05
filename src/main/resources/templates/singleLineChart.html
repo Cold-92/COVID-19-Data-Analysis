@@ -2,7 +2,7 @@
 <html lang="en" xmlns:th="http://www.thymeleaf.com">
 <head>
       <meta charset="UTF-8">
-      <title>中国疫情数据统计单条折线图</title>
+      <title>中国现有确诊趋势</title>
       <script type="text/javascript" src="js/echarts.min.js"></script>
 </head>
 <body>
@@ -20,7 +20,7 @@
           let option = {
               // 标题组件
               title: {
-                  text: '中国疫情数据统计单条折线图'
+                  text: '中国现有确诊趋势'
               },
               // 提示框组件
               tooltip: {
@@ -37,6 +37,7 @@
                   // data: ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun']
               },
               yAxis: {
+                  // 表示折线图
                   type: 'value'
               },
               series: [{

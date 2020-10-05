@@ -5,13 +5,14 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 /**
- * 单条折线图bean：中国现有确诊趋势
+ * 治愈率/病死率折线图bean
  */
 @Data @AllArgsConstructor @NoArgsConstructor
-public class SingleChartBean {
+public class RateLineChartBean {
 
     // x轴: 日期
     private String date;
-    // y轴: 当前确诊
-    private int nowConfirm;
+    // y轴: 病死率, 治愈率
+    private double deadRate;
+    private double healRate;
 }

@@ -8,7 +8,7 @@ import org.springframework.scheduling.annotation.EnableScheduling;
 
 @SpringBootApplication
 @MapperScan("org.cold92.mapper")
-@EnableScheduling // 打開對定時任務的使用
+@EnableScheduling // 打开对定时任务调用
 public class DemoApplication {
 
 	public static void main(String[] args) throws Exception {

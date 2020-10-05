@@ -2,7 +2,7 @@
 <html lang="en" xmlns:th="http://www.thymeleaf.com">
 <head>
       <meta charset="UTF-8">
-      <title>中国疫情数据统计单条折线图</title>
+      <title>中国现有确诊趋势</title>
       <script type="text/javascript" src="js/echarts.min.js"></script>
 </head>
 <body>
@@ -13,14 +13,14 @@
       <script type="text/javascript" th:inline="javascript">
           // 基于准备好的dom，初始化echarts实例
           let myChart = echarts.init(document.getElementById('main'));
-          // 使用thymeleaf接收后端传输的json数据
+          // 使用thymeleaf接收后端传输的json字符串数据
           let dateListStr = [[${dateList}]];
           let nowConfirmListStr = [[${nowConfirmList}]];
           // 指定图表的配置项和数据
           let option = {
               // 标题组件
               title: {
-                  text: '中国疫情数据统计单条折线图'
+                  text: '中国现有确诊趋势'
               },
               // 提示框组件
               tooltip: {
@@ -37,6 +37,7 @@
                   // data: ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun']
               },
               yAxis: {
+                  // 表示折线图
                   type: 'value'
               },
               series: [{
