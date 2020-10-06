@@ -2,7 +2,7 @@ package org.cold92.handler;
 
 import com.google.gson.Gson;
 import org.cold92.bean.*;
-import org.cold92.service.DataService;
+import org.cold92.service.*;
 import org.cold92.util.HttpClientUtil;
 import org.cold92.util.HttpURLConnectionUtil;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -25,18 +25,53 @@ public class TencentDataHandler {
     private static String CHINA_CHART_DATA = "https://view.inews.qq.com/g2/getOnsInfo?name=disease_other";
 
     @Autowired
-    private DataService dataService;
+    private TotalTableService totalTableService;
+    @Autowired
+    private NowConfirmService nowConfirmService;
+    @Autowired
+    private NewConfirmService newConfirmService;
+    @Autowired
+    private ConfirmHealDeadService confirmHealDeadService;
+    @Autowired
+    private RateService rateService;
+    @Autowired
+    private CityTopService cityTopService;
+    @Autowired
+    private NowConfirmConstituteService nowConfirmConstituteService;
+    @Autowired
+    private MapService mapService;
 
     /**
      * 數據持久化（選擇騰訊數據源初始化數據）
      */
     public void persistData() {
         try {
-            List<TotalDataBean> beanList = getTotalData();
+            List<TotalTableBean> totalTableBeanList = getTotalData();
+            List<NowConfirmBean> nowConfirmBeanList = getNowConfirmData();
+            List<NewConfirmBean> newConfirmBeanList = getNewConfirmData();
+            List<ConfirmHealDeadBean> confirmHealDeadBeanList = getConfirmHealDeadData();
+            List<RateBean> rateBeanList = getRateData();
+            List<CityTopBean> cityTopBeanList = getCityTopData();
+            List<NowConfirmConstituteBean> nowConfirmConstituteBeanList = getNowConfirmConstituteData();
+            List<MapBean> mapBeanList = getMapData();
             // 每次持久化數據之前，先清空本地數據
-            dataService.remove(null);
+            totalTableService.remove(null);
+            nowConfirmService.remove(null);
+            newConfirmService.remove(null);
+            confirmHealDeadService.remove(null);
+            rateService.remove(null);
+            cityTopService.remove(null);
+            nowConfirmConstituteService.remove(null);
+            mapService.remove(null);
             // 持久化數據到本地
-            dataService.saveBatch(beanList);
+            totalTableService.saveBatch(totalTableBeanList);
+            nowConfirmService.saveBatch(nowConfirmBeanList);
+            newConfirmService.saveBatch(newConfirmBeanList);
+            confirmHealDeadService.saveBatch(confirmHealDeadBeanList);
+            rateService.saveBatch(rateBeanList);
+            cityTopService.saveBatch(cityTopBeanList);
+            nowConfirmConstituteService.saveBatch(nowConfirmConstituteBeanList);
+            mapService.saveBatch(mapBeanList);
         } catch (Exception e) {
             e.printStackTrace();
         }
@@ -46,7 +81,7 @@ public class TencentDataHandler {
      * 程序運行時，自動持久化實時數據
      * @PostConstruct：該方法在服務器加載servlet時執行，只執行一次，在init()之前調用
      */
-//    @PostConstruct
+    @PostConstruct
     public void initData() {
         persistData();
     }
@@ -63,13 +98,12 @@ public class TencentDataHandler {
     /**
      * 获取中国各个省份疫情的json数据并通过gson解析成bean
      * @return
-     * @throws Exception
      */
-    public static List<TotalDataBean> getTotalData() throws Exception {
+    public static List<TotalTableBean> getTotalData() {
         // 解析json字符串成bean
         Gson gson = new Gson();
         // 存放bean
-        List<TotalDataBean> beanList = new ArrayList<>();
+        List<TotalTableBean> beanList = new ArrayList<>();
         // 获取实时json数据
         String responseJson = HttpURLConnectionUtil.doGet(CHINA_TOTAL_DATA_TENCENT);
         Map responseMap = gson.fromJson(responseJson, Map.class);
@@ -89,7 +123,7 @@ public class TencentDataHandler {
             double suspect = (Double) total.get("suspect");
             double dead = (Double) total.get("dead");
             double heal = (Double) total.get("heal");
-            TotalDataBean bean = new TotalDataBean();
+            TotalTableBean bean = new TotalTableBean();
             bean.setArea(area);
             bean.setNowConfirm((int) nowConfirm);
             bean.setConfirm((int) confirm);
@@ -105,9 +139,9 @@ public class TencentDataHandler {
      * 获取单条折线图的json实时数据并通过gson解析成bean
      * @return
      */
-    public static List<SingleChartBean> getSingleChartData() {
+    public static List<NowConfirmBean> getNowConfirmData() {
         Gson gson = new Gson();
-        List<SingleChartBean> beanList = new ArrayList<>();
+        List<NowConfirmBean> beanList = new ArrayList<>();
         // 使用HttpClient封装的http请求获取的数据
         String responseJson = HttpClientUtil.doGet(CHINA_CHART_DATA);
         Map responseMap = gson.fromJson(responseJson, Map.class);
@@ -119,7 +153,7 @@ public class TencentDataHandler {
             Map chinaDayMap = (Map) chinaDayList.get(i);
             String date = (String) chinaDayMap.get("date");
             double nowConfirm = (Double) chinaDayMap.get("nowConfirm");
-            SingleChartBean bean = new SingleChartBean();
+            NowConfirmBean bean = new NowConfirmBean();
             bean.setDate(date);
             bean.setNowConfirm((int) nowConfirm);
             beanList.add(bean);
@@ -131,9 +165,9 @@ public class TencentDataHandler {
      * 获取双条条折线图的json实时数据并通过gson解析成bean
      * @return
      */
-    public static List<DoubleChartBean> getDoubleChartData() {
+    public static List<NewConfirmBean> getNewConfirmData() {
         Gson gson = new Gson();
-        List<DoubleChartBean> beanList = new ArrayList<>();
+        List<NewConfirmBean> beanList = new ArrayList<>();
         // 使用HttpClient封装的http请求获取的数据
         String responseJson = HttpClientUtil.doGet(CHINA_CHART_DATA);
         Map responseMap = gson.fromJson(responseJson, Map.class);
@@ -145,7 +179,7 @@ public class TencentDataHandler {
             String date = (String) chinaDayAddMap.get("date");
             double confirm = (Double) chinaDayAddMap.get("confirm");
             double suspect = (Double) chinaDayAddMap.get("suspect");
-            DoubleChartBean bean = new DoubleChartBean();
+            NewConfirmBean bean = new NewConfirmBean();
             bean.setDate(date);
             bean.setConfirm((int) confirm);
             bean.setSuspect((int) suspect);
@@ -158,9 +192,9 @@ public class TencentDataHandler {
      * 获取三条条折线图的json实时数据并通过gson解析成bean
      * @return
      */
-    public static List<TrebleChartBean> getTrebleChartData() {
+    public static List<ConfirmHealDeadBean> getConfirmHealDeadData() {
         Gson gson = new Gson();
-        List<TrebleChartBean> beanList = new ArrayList<>();
+        List<ConfirmHealDeadBean> beanList = new ArrayList<>();
         String responseJson = HttpClientUtil.doGet(CHINA_CHART_DATA);
         Map responseMap = gson.fromJson(responseJson, Map.class);
         String dataStr = (String) responseMap.get("data");
@@ -172,7 +206,7 @@ public class TencentDataHandler {
             double confirm = (Double) chinaDayMap.get("confirm");
             double heal = (Double) chinaDayMap.get("heal");
             double dead = (Double) chinaDayMap.get("dead");
-            TrebleChartBean bean = new TrebleChartBean();
+            ConfirmHealDeadBean bean = new ConfirmHealDeadBean();
             bean.setDate(date);
             bean.setConfirm((int) confirm);
             bean.setHeal((int) heal);
@@ -186,9 +220,9 @@ public class TencentDataHandler {
      * 获取病死率/治愈率折线图的json实时数据并通过gson解析成bean
      * @return
      */
-    public static List<RateLineChartBean> getRateLineChartData() {
+    public static List<RateBean> getRateData() {
         Gson gson = new Gson();
-        List<RateLineChartBean> beanList = new ArrayList<>();
+        List<RateBean> beanList = new ArrayList<>();
         String responseJson = HttpClientUtil.doGet(CHINA_CHART_DATA);
         Map responseMap = gson.fromJson(responseJson, Map.class);
         String dataStr = (String) responseMap.get("data");
@@ -199,7 +233,7 @@ public class TencentDataHandler {
             String date = (String) chinaDayMap.get("date");
             double deadRate = Double.parseDouble((String) chinaDayMap.get("deadRate"));
             double healRate = Double.parseDouble((String) chinaDayMap.get("healRate"));
-            RateLineChartBean bean = new RateLineChartBean();
+            RateBean bean = new RateBean();
             bean.setDate(date);
             bean.setDeadRate(deadRate);
             bean.setHealRate(healRate);
@@ -212,9 +246,9 @@ public class TencentDataHandler {
      * 获取境外输入省市TOP10柱状图的json实时数据并通过gson解析成bean
      * @return
      */
-    public static List<CityTopChartBean> getCityTopChartData() {
+    public static List<CityTopBean> getCityTopData() {
         Gson gson = new Gson();
-        List<CityTopChartBean> beanList = new ArrayList<>();
+        List<CityTopBean> beanList = new ArrayList<>();
         String responseJson = HttpClientUtil.doGet(CHINA_TOTAL_DATA_TENCENT);
         Map responseMap = gson.fromJson(responseJson, Map.class);
         String dataStr = (String) responseMap.get("data");
@@ -231,7 +265,7 @@ public class TencentDataHandler {
                 if ("境外输入".equals(subChildrenElement.get("name"))) {
                     Map total = (Map) subChildrenElement.get("total");
                     double confirm = (Double) total.get("confirm");
-                    CityTopChartBean bean = new CityTopChartBean();
+                    CityTopBean bean = new CityTopBean();
                     bean.setName(name);
                     bean.setConfirm((int) confirm);
                     beanList.add(bean);
@@ -247,16 +281,16 @@ public class TencentDataHandler {
      * 获取全国现有确诊构成饼状图的json实时数据并通过gson解析成bean
      * @return
      */
-    public static List<NowConfirmStatisBean> getNowConfirmStatis() {
+    public static List<NowConfirmConstituteBean> getNowConfirmConstituteData() {
         Gson gson = new Gson();
-        List<NowConfirmStatisBean> beanList = new ArrayList<>();
+        List<NowConfirmConstituteBean> beanList = new ArrayList<>();
         String responseJson = HttpClientUtil.doGet(CHINA_CHART_DATA);
         Map responseMap = gson.fromJson(responseJson, Map.class);
         String dataStr = (String) responseMap.get("data");
         Map data = gson.fromJson(dataStr, Map.class);
         Map<String, Double> nowConfirmStatis = (Map) data.get("nowConfirmStatis");
         for (Map.Entry<String, Double> entry : nowConfirmStatis.entrySet()) {
-            NowConfirmStatisBean bean = new NowConfirmStatisBean();
+            NowConfirmConstituteBean bean = new NowConfirmConstituteBean();
             double value = entry.getValue();
             switch (entry.getKey()) {
                 case "gat": {
@@ -284,9 +318,9 @@ public class TencentDataHandler {
      * 获取全国确证地图的json实时数据并通过gson解析成bean
      * @return
      */
-    public static List<MapChartBean> getMapChartData() {
+    public static List<MapBean> getMapData() {
         Gson gson = new Gson();
-        List<MapChartBean> beanList = new ArrayList<>();
+        List<MapBean> beanList = new ArrayList<>();
         String responseJson = HttpClientUtil.doGet(CHINA_TOTAL_DATA_TENCENT);
         Map responseMap = gson.fromJson(responseJson, Map.class);
         String dataStr = (String) responseMap.get("data");
@@ -299,15 +333,11 @@ public class TencentDataHandler {
             String name = (String) childrenMap.get("name");
             Map total = (Map) childrenMap.get("total");
             double nowConfirm = (Double) total.get("nowConfirm");
-            MapChartBean bean = new MapChartBean();
+            MapBean bean = new MapBean();
             bean.setName(name);
             bean.setValue((int) nowConfirm);
             beanList.add(bean);
         }
         return beanList;
-    }
-
-    public static void main(String[] args) {
-        getMapChartData();
     }
 }

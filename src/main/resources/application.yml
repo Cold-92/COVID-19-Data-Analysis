@@ -8,16 +8,18 @@ spring:
     url: jdbc:mysql://localhost:3306/covid?characterEncoding=utf8&useSSL=false&serverTimezone=UTC
     username: root
     password: 13013005866
-  #解决springboot不能处理put和delete请求
+  # 解决springboot不能处理put和delete请求
   mvc:
     hiddenmethod:
       filter:
         enabled: true
+  # 配置国际化: 找到国际化文件的位置
+  messages:
+    basename: i18n.web
 
 
-#   这两个配置可删除mybatis-config.xml并且替代上面的配置
+# 这两个配置可删除mybatis-config.xml并且替代上面的配置
 mybatis:
   mapper-locations: classpath*:/mybatis/mapper/*.xml
   type-aliases-package: org.cold92.bean
-
 

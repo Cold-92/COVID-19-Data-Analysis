@@ -1,7 +1,7 @@
 package org.cold92.handler;
 
 import com.google.gson.Gson;
-import org.cold92.bean.TotalDataBean;
+import org.cold92.bean.TotalTableBean;
 import org.cold92.util.HttpURLConnectionUtil;
 import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
@@ -24,11 +24,11 @@ public class CloveDocDataHandler {
      * @return
      * @throws Exception
      */
-    public static List<TotalDataBean> getTotalData() throws Exception {
+    public static List<TotalTableBean> getTotalData() throws Exception {
         // 解析json字符串成bean
         Gson gson = new Gson();
         // 存放bean
-        List<TotalDataBean> beanList = new ArrayList<>();
+        List<TotalTableBean> beanList = new ArrayList<>();
         // 獲取疫情數據
         String responseHtml = HttpURLConnectionUtil.doGet(CHINA_TOTAL_DATA_CLOVEDOC);
         // 解析html數據
@@ -47,7 +47,7 @@ public class CloveDocDataHandler {
             double suspect = (Double) total.get("suspectedCount");
             double dead = (Double) total.get("deadCount");
             double heal = (Double) total.get("curedCount");
-            TotalDataBean bean = new TotalDataBean();
+            TotalTableBean bean = new TotalTableBean();
             bean.setArea(area);
             bean.setNowConfirm((int) nowConfirm);
             bean.setConfirm((int) confirm);

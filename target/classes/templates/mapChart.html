@@ -4,43 +4,106 @@
     <meta charset="UTF-8">
     <title>疫情地图</title>
     <script type="text/javascript" src="js/echarts.min.js"></script>
+    <script type="text/javascript" src="http://echarts.baidu.com/gallery/vendors/echarts/echarts-all-3.js"></script>
     <script type="text/javascript" src="js/china.js"></script>
 </head>
 <body>
-    <div id="main" style="width:1000px;height:700px;"></div>
+    <div id="main" style="width:1000px;height:850px;"></div>
     <script th:inline="javascript">
         let beanListStr = [[${beanList}]];
         option = {
             title: {
                 text: '疫情地图',
-                subtext: '仅供参考',
+                subtext: '权威数据',
                 x: 'center'
             },
             tooltip: {
-                trigger: 'item'
+                trigger: 'item',
+                formatter: function(e, t, n) {
+                    return .5 == e.value ? e.name + "：有疑似病例" : e.seriesName + "<br />" + e.name + "：" + e.value
+                }
             },
-            series: [
-                {
-                    name: '现存确诊',
-                    type: 'map',
-                    mapType: 'china',
-                    roam: false,
-                    label: {
-                        normal: {
-                            // formatter: '{b}',
-                            position: 'center',
-                            show: true,
-                            textStyle: {
-                                color: 'rgba(0,0,0,0.4)'
-                            }
-                        },
-                        emphasis: {
-                            show: true
+            visualMap: {
+                min: 0,
+                max: 1000,
+                left: 26,
+                bottom: 40,
+                showLabel: !0,
+                text: ["高", "低"],
+                pieces: [{
+                    gt: 100,
+                    label: "> 100 人",
+                    color: "#7f1100"
+                }, {
+                    gte: 10,
+                    lte: 100,
+                    label: "10 - 100 人",
+                    color: "#ff5428"
+                }, {
+                    gte: 1,
+                    lt: 10,
+                    label: "1 - 9 人",
+                    color: "#ff8c71"
+                }, {
+                    gt: 0,
+                    lt: 1,
+                    label: "疑似",
+                    color: "#ffd768"
+                }, {
+                    value: 0,
+                    color: "#ffffff"
+                }],
+                show: !0
+            },
+            geo: {
+                map: "china",
+                roam: !1,
+                scaleLimit: {
+                    min: 1,
+                    max: 2
+                },
+                zoom: 1.23,
+                top: 120,
+                label: {
+                    normal: {
+                        show: !0,
+                        fontSize: "14",
+                        color: "rgba(0,0,0,0.7)"
+                    }
+                },
+                itemStyle: {
+                    normal: {
+                        borderColor: "#778899",//每个区域的边框色
+                    },
+                    emphasis: {
+                        areaColor: "#f2d5ad",
+                        shadowOffsetX: 0,
+                        shadowOffsetY: 0,
+                        borderWidth: 0
+                    }
+                }
+            },
+            series: [{
+                name: "确诊病例",
+                type: "map",
+                geoIndex: 0,
+                mapType: 'china',
+                roam: false,
+                label: {
+                    normal: {
+                        // formatter: '{b}',
+                        position: 'center',
+                        show: true,
+                        textStyle: {
+                            color: 'rgba(0,0,0,0.4)'
                         }
                     },
-                    data: JSON.parse(beanListStr)
-                }
-            ]
+                    emphasis: {
+                        show: true
+                    }
+                },
+                data: JSON.parse(beanListStr)
+            }]
         };
         let chart = echarts.init(document.getElementById("main"))
         chart.setOption(option)

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.com">
+<head>
+      <meta charset="UTF-8">
+      <title th:text="#{web.totalTable.title}">中国各个省市数据统计</title>
+      <link rel="stylesheet" th:href="@{css/bootstrap.css}">
+</head>
+<body>
+      <h1 th:text="#{web.totalTable.table.title}">中国各省份疫情统计</h1>
+      <div>
+            <a class="btn btn-sm" th:href="@{/totalTable(lan='ch_ZN')}">中文</a>
+            <a class="btn btn-sm" th:href="@{/totalTable(lan='en_US')}">英文</a>
+      </div>
+      <table class="table table-hover">
+            <thead>
+                  <tr>
+                        <th><span th:text="#{web.totalTable.table.subtitle.area}">地区</span></th>
+                        <th><span th:text="#{web.totalTable.table.subtitle.nowConfirm}">当前感染</span></th>
+                        <th><span th:text="#{web.totalTable.table.subtitle.confirm}">累计感染</span></th>
+                        <th><span th:text="#{web.totalTable.table.subtitle.dead}">死亡</span></th>
+                        <th><span th:text="#{web.totalTable.table.subtitle.heal}">治愈</span></th>
+                  </tr>
+            </thead>
+            <tbody>
+                  <tr th:each="bean:${beanList}">
+                        <td th:text="${bean.area}"></td>
+                        <td th:text="${bean.nowConfirm}"></td>
+                        <td th:text="${bean.confirm}"></td>
+                        <td th:text="${bean.dead}"></td>
+                        <td th:text="${bean.heal}"></td>
+                  </tr>
+            </tbody>
+      </table>
+</body>
+</html>
