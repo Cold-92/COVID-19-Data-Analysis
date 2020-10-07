@@ -54,7 +54,7 @@ public class TencentDataHandler {
             List<CityTopBean> cityTopBeanList = getCityTopData();
             List<NowConfirmConstituteBean> nowConfirmConstituteBeanList = getNowConfirmConstituteData();
             List<MapBean> mapBeanList = getMapData();
-            // 每次持久化數據之前，先清空本地數據
+            // 每次持久化数据之前，先清空本地数据
             totalTableService.remove(null);
             nowConfirmService.remove(null);
             newConfirmService.remove(null);
@@ -63,7 +63,7 @@ public class TencentDataHandler {
             cityTopService.remove(null);
             nowConfirmConstituteService.remove(null);
             mapService.remove(null);
-            // 持久化數據到本地
+            // 持久化数据到本地
             totalTableService.saveBatch(totalTableBeanList);
             nowConfirmService.saveBatch(nowConfirmBeanList);
             newConfirmService.saveBatch(newConfirmBeanList);
@@ -78,7 +78,7 @@ public class TencentDataHandler {
     }
 
     /**
-     * 程序運行時，自動持久化實時數據
+     * 程序运行时，自动持久化实时数据
      * @PostConstruct：該方法在服務器加載servlet時執行，只執行一次，在init()之前調用
      */
     @PostConstruct
@@ -87,8 +87,8 @@ public class TencentDataHandler {
     }
 
     /**
-     * 定時自動持久化實時數據 (每一個小時持久化數據一次)
-     * @Scheduled：使用cron表達式作爲參數進行定時執行方法操作
+     * 定时自动持久化实时数据 (每一个小时持久化数据一次)
+     * @Scheduled：使用cron表达式作为参数进行定时执行方法操作
      */
     @Scheduled(cron = "1-59 0 0/1 * * ?")
     public void updateData() {

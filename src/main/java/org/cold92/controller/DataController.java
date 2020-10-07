@@ -99,7 +99,7 @@ public class DataController {
         model.addAttribute("dateList", new Gson().toJson(dateList));
         model.addAttribute("confirmList", new Gson().toJson(confirmList));
         model.addAttribute("suspectList", new Gson().toJson(suspectList));
-        return "newConfirmConstituteChart.html";
+        return "newConfirmChart.html";
     }
 
     /**
@@ -196,5 +196,94 @@ public class DataController {
         List<MapBean> beanList = mapService.list();
         model.addAttribute("beanList", new Gson().toJson(beanList));
         return "mapChart.html";
+    }
+
+    /**
+     * 所有数据总览
+     * @param model
+     * @return
+     */
+    @GetMapping("/index")
+    public String index(Model model) {
+        // totalTable数据解析
+        List<TotalTableBean> totalTableBeanList = totalTableService.list();
+        model.addAttribute("totalTableBeanList", totalTableBeanList);
+        // nowConfirm数据解析
+        List<NowConfirmBean> nowConfirmBeanList = nowConfirmService.list();
+        List<String> nowConfirmDateList = new ArrayList<>();
+        List<Integer> nowConfirmList = new ArrayList<>();
+        for (int i = 0; i < nowConfirmBeanList.size(); i++) {
+            NowConfirmBean bean = nowConfirmBeanList.get(i);
+            nowConfirmDateList.add(bean.getDate());
+            nowConfirmList.add(bean.getNowConfirm());
+        }
+        model.addAttribute("nowConfirmDateList", new Gson().toJson(nowConfirmDateList));
+        model.addAttribute("nowConfirmList", new Gson().toJson(nowConfirmList));
+        // newConfirm数据解析
+        List<NewConfirmBean> newConfirmBeanList = newConfirmService.list();
+        List<String> newConfirmDateList = new ArrayList<>();
+        List<Integer> newConfirmList = new ArrayList<>();
+        List<Integer> newSuspectList = new ArrayList<>();
+        for (int i = 0; i < newConfirmBeanList.size(); i++) {
+            NewConfirmBean bean = newConfirmBeanList.get(i);
+            newConfirmDateList.add(bean.getDate());
+            newConfirmList.add(bean.getConfirm());
+            newSuspectList.add(bean.getSuspect());
+        }
+        model.addAttribute("newConfirmDateList", new Gson().toJson(newConfirmDateList));
+        model.addAttribute("newConfirmList", new Gson().toJson(newConfirmList));
+        model.addAttribute("newSuspectList", new Gson().toJson(newSuspectList));
+        // confirmHealDead数据解析
+        List<ConfirmHealDeadBean> confirmHealDeadBeanList = confirmHealDeadService.list();
+        List<String> confirmHealDeadDateList = new ArrayList<>();
+        List<Integer> confirmHealDeadConfirmList = new ArrayList<>();
+        List<Integer> confirmHealDeadHealList = new ArrayList<>();
+        List<Integer> confirmHealDeadDeadList = new ArrayList<>();
+        for (ConfirmHealDeadBean bean : confirmHealDeadBeanList) {
+            confirmHealDeadDateList.add(bean.getDate());
+            confirmHealDeadConfirmList.add(bean.getConfirm());
+            confirmHealDeadHealList.add(bean.getHeal());
+            confirmHealDeadDeadList.add(bean.getDead());
+        }
+        model.addAttribute("confirmHealDeadDateList", new Gson().toJson(confirmHealDeadDateList));
+        model.addAttribute("confirmHealDeadConfirmList", new Gson().toJson(confirmHealDeadConfirmList));
+        model.addAttribute("confirmHealDeadHealList", new Gson().toJson(confirmHealDeadHealList));
+        model.addAttribute("confirmHealDeadDeadList", new Gson().toJson(confirmHealDeadDeadList));
+        // rate数据解析
+        List<RateBean> rateBeanList = rateService.list();
+        List<String> rateDateList = new ArrayList<>();
+        List<Double> deadRateList = new ArrayList<>();
+        List<Double> healRateList = new ArrayList<>();
+        for (RateBean bean : rateBeanList) {
+            rateDateList.add(bean.getDate());
+            deadRateList.add(bean.getDeadRate());
+            healRateList.add(bean.getHealRate());
+        }
+        model.addAttribute("rateDateList", new Gson().toJson(rateDateList));
+        model.addAttribute("deadRateList", new Gson().toJson(deadRateList));
+        model.addAttribute("healRateList", new Gson().toJson(healRateList));
+        // cityTop数据解析
+        List<CityTopBean> cityTopBeanList = cityTopService.list();
+        List<String> cityTopNameList = new ArrayList<>();
+        List<Integer> cityTopConfirmList = new ArrayList<>();
+        for (int i = 0; i < 10; i++) {
+            CityTopBean bean = cityTopBeanList.get(i);
+            cityTopNameList.add(bean.getName());
+            cityTopConfirmList.add(bean.getConfirm());
+        }
+        model.addAttribute("cityTopNameList", new Gson().toJson(cityTopNameList));
+        model.addAttribute("cityTopConfirmList", new Gson().toJson(cityTopConfirmList));
+        // nowConfirmConstitute数据解析
+        List<NowConfirmConstituteBean> nowConfirmConstituteBeanList = nowConfirmConstituteService.list();
+        List<String> nowConfirmConstituteNameList = new ArrayList<>();
+        for (NowConfirmConstituteBean bean : nowConfirmConstituteBeanList) {
+            nowConfirmConstituteNameList.add(bean.getName());
+        }
+        model.addAttribute("nowConfirmConstituteNameList", new Gson().toJson(nowConfirmConstituteNameList));
+        model.addAttribute("nowConfirmConstituteBeanList", new Gson().toJson(nowConfirmConstituteBeanList));
+        // map数据解析
+        List<MapBean> mapBeanList = mapService.list();
+        model.addAttribute("mapBeanList", new Gson().toJson(mapBeanList));
+        return "index.html";
     }
 }

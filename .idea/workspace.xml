@@ -2,87 +2,15 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="4d6679d1-4188-4f5b-a6a7-4028e50e61a0" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/cold92/config/WebConfig.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/cold92/config/WebLocaleResolver.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/cold92/mapper/CityTopMapper.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/cold92/mapper/ConfirmHealDeadMapper.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/cold92/mapper/MapMapper.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/cold92/mapper/NewConfirmMapper.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/cold92/mapper/NowConfirmConstituteMapper.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/cold92/mapper/NowConfirmMapper.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/cold92/mapper/RateMapper.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/cold92/mapper/TotalTableMapper.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/cold92/service/CityTopService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/cold92/service/ConfirmHealDeadService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/cold92/service/MapService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/cold92/service/NewConfirmService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/cold92/service/NowConfirmConstituteService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/cold92/service/NowConfirmService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/cold92/service/RateService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/cold92/service/TotalTableService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/cold92/service/serviceImpl/CityTopServiceImpl.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/cold92/service/serviceImpl/ConfirmHealDeadServiceImpl.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/cold92/service/serviceImpl/MapServiceImpl.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/cold92/service/serviceImpl/NewConfirmServiceImpl.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/cold92/service/serviceImpl/NowConfirmConstituteServiceImpl.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/cold92/service/serviceImpl/NowConfirmServiceImpl.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/cold92/service/serviceImpl/RateServiceImpl.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/i18n/web.properties" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/i18n/web_en_US.properties" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/i18n/web_zh_CN.properties" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/static/js/jquery-3.4.1.min.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/confirmHealDeadChart.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/newConfirmConstituteChart.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/nowConfirmConstituteChart.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/rateChart.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/index.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/templates/index.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/cold92/bean/CityTopChartBean.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/cold92/bean/CityTopBean.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/cold92/bean/DoubleChartBean.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/cold92/bean/NewConfirmBean.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/cold92/bean/MapChartBean.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/cold92/bean/MapBean.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/cold92/bean/NowConfirmStatisBean.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/cold92/bean/NowConfirmConstituteBean.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/cold92/bean/RateLineChartBean.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/cold92/bean/RateBean.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/cold92/bean/SingleChartBean.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/cold92/bean/NowConfirmBean.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/cold92/bean/TotalDataBean.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/cold92/bean/TotalTableBean.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/cold92/bean/TrebleChartBean.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/cold92/bean/ConfirmHealDeadBean.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/cold92/controller/DataController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/cold92/controller/DataController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/cold92/handler/CloveDocDataHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/cold92/handler/CloveDocDataHandler.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/cold92/handler/TencentDataHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/cold92/handler/TencentDataHandler.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/cold92/mapper/DataMapper.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/cold92/service/DataService.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/cold92/service/DataServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/cold92/service/serviceImpl/TotalTableServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/cityTopChart.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/cityTopChart.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/doubleLineChart.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/list.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/totalTable.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/map.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/mapChart.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/mapChart.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/nowConfirmStatis.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/rateLineChart.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/singleLineChart.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/nowConfirmChart.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/trebleLineChart.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/application.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/org/cold92/bean/CityTopChartBean.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/org/cold92/bean/DoubleChartBean.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/org/cold92/bean/MapChartBean.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/org/cold92/bean/NowConfirmStatisBean.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/org/cold92/bean/RateLineChartBean.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/org/cold92/bean/SingleChartBean.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/org/cold92/bean/TotalDataBean.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/org/cold92/bean/TrebleChartBean.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/newConfirmConstituteChart.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/newConfirmChart.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/org/cold92/controller/DataController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/org/cold92/controller/DataController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/org/cold92/handler/CloveDocDataHandler.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/org/cold92/handler/CloveDocDataHandler.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/org/cold92/handler/TencentDataHandler.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/org/cold92/handler/TencentDataHandler.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/org/cold92/mapper/DataMapper.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/org/cold92/service/DataService.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/org/cold92/service/DataServiceImpl.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/templates/cityTopChart.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/templates/cityTopChart.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/templates/doubleLineChart.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/templates/list.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/templates/mapChart.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/templates/mapChart.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/templates/nowConfirmStatis.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/templates/rateLineChart.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/templates/singleLineChart.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/templates/trebleLineChart.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/templates/newConfirmConstituteChart.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/templates/newConfirmChart.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -94,9 +22,9 @@
       <list>
         <option value="package.json" />
         <option value="JavaScript File" />
-        <option value="HTML File" />
         <option value="Interface" />
         <option value="Class" />
+        <option value="HTML File" />
       </list>
     </option>
   </component>
@@ -112,7 +40,7 @@
     <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
     <property name="DefaultHtmlFileTemplate" value="HTML File" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/main/resources/static/js" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
@@ -242,7 +170,8 @@
     <MESSAGE value="1.4: 實現數據的實時更新" />
     <MESSAGE value="1.5: 用图表对统计数据进行分析并展示" />
     <MESSAGE value="1.6: 完善使用图表对数据的分析" />
-    <option name="LAST_COMMIT_MESSAGE" value="1.6: 完善使用图表对数据的分析" />
+    <MESSAGE value="1.7: 调整数据爬取流程,实现浏览器国际化和手动国际化的功能" />
+    <option name="LAST_COMMIT_MESSAGE" value="1.7: 调整数据爬取流程,实现浏览器国际化和手动国际化的功能" />
   </component>
   <component name="WindowStateProjectService">
     <state x="140" y="92" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1601463352448">
@@ -261,30 +190,30 @@
       <screen x="0" y="0" width="1368" height="872" />
     </state>
     <state x="237" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog/0.0.1368.872@0.0.1368.872" timestamp="1601919054044" />
-    <state x="297" y="27" width="877" height="782" key="CommitChangelistDialog2" timestamp="1601988584127">
+    <state x="297" y="27" width="877" height="782" key="CommitChangelistDialog2" timestamp="1601988625303">
       <screen x="0" y="0" width="1368" height="872" />
     </state>
-    <state x="297" y="27" width="877" height="782" key="CommitChangelistDialog2/0.0.1368.872@0.0.1368.872" timestamp="1601988584127" />
-    <state x="465" y="192" key="FileChooserDialogImpl" timestamp="1601863876406">
+    <state x="297" y="27" width="877" height="782" key="CommitChangelistDialog2/0.0.1368.872@0.0.1368.872" timestamp="1601988625303" />
+    <state x="465" y="192" key="FileChooserDialogImpl" timestamp="1601989737918">
       <screen x="0" y="0" width="1368" height="872" />
     </state>
-    <state x="465" y="192" key="FileChooserDialogImpl/0.0.1368.872@0.0.1368.872" timestamp="1601863876406" />
-    <state width="1326" height="102" key="GridCell.Tab.0.bottom" timestamp="1601988591335">
+    <state x="465" y="192" key="FileChooserDialogImpl/0.0.1368.872@0.0.1368.872" timestamp="1601989737918" />
+    <state width="1326" height="2" key="GridCell.Tab.0.bottom" timestamp="1602056777795">
       <screen x="0" y="0" width="1368" height="872" />
     </state>
-    <state width="1326" height="102" key="GridCell.Tab.0.bottom/0.0.1368.872@0.0.1368.872" timestamp="1601988591335" />
-    <state width="1326" height="102" key="GridCell.Tab.0.center" timestamp="1601988591334">
+    <state width="1326" height="2" key="GridCell.Tab.0.bottom/0.0.1368.872@0.0.1368.872" timestamp="1602056777795" />
+    <state width="1326" height="2" key="GridCell.Tab.0.center" timestamp="1602056777795">
       <screen x="0" y="0" width="1368" height="872" />
     </state>
-    <state width="1326" height="102" key="GridCell.Tab.0.center/0.0.1368.872@0.0.1368.872" timestamp="1601988591334" />
-    <state width="1326" height="102" key="GridCell.Tab.0.left" timestamp="1601988591334">
+    <state width="1326" height="2" key="GridCell.Tab.0.center/0.0.1368.872@0.0.1368.872" timestamp="1602056777795" />
+    <state width="1326" height="2" key="GridCell.Tab.0.left" timestamp="1602056777795">
       <screen x="0" y="0" width="1368" height="872" />
     </state>
-    <state width="1326" height="102" key="GridCell.Tab.0.left/0.0.1368.872@0.0.1368.872" timestamp="1601988591334" />
-    <state width="1326" height="102" key="GridCell.Tab.0.right" timestamp="1601988591335">
+    <state width="1326" height="2" key="GridCell.Tab.0.left/0.0.1368.872@0.0.1368.872" timestamp="1602056777795" />
+    <state width="1326" height="2" key="GridCell.Tab.0.right" timestamp="1602056777795">
       <screen x="0" y="0" width="1368" height="872" />
     </state>
-    <state width="1326" height="102" key="GridCell.Tab.0.right/0.0.1368.872@0.0.1368.872" timestamp="1601988591335" />
+    <state width="1326" height="2" key="GridCell.Tab.0.right/0.0.1368.872@0.0.1368.872" timestamp="1602056777795" />
     <state width="1326" height="312" key="GridCell.Tab.1.bottom" timestamp="1601814699934">
       <screen x="0" y="0" width="1368" height="872" />
     </state>
@@ -301,18 +230,18 @@
       <screen x="0" y="0" width="1368" height="872" />
     </state>
     <state width="1326" height="312" key="GridCell.Tab.1.right/0.0.1368.872@0.0.1368.872" timestamp="1601814699933" />
-    <state x="186" y="79" key="SettingsEditor" timestamp="1601917250193">
+    <state x="224" y="118" key="SettingsEditor" timestamp="1602057902066">
       <screen x="0" y="0" width="1368" height="872" />
     </state>
-    <state x="186" y="79" key="SettingsEditor/0.0.1368.872@0.0.1368.872" timestamp="1601917250193" />
-    <state x="278" y="170" key="Vcs.Push.Dialog.v2" timestamp="1601896729697">
+    <state x="224" y="118" key="SettingsEditor/0.0.1368.872@0.0.1368.872" timestamp="1602057902066" />
+    <state x="278" y="170" key="Vcs.Push.Dialog.v2" timestamp="1601988641459">
       <screen x="0" y="0" width="1368" height="872" />
     </state>
-    <state x="278" y="170" key="Vcs.Push.Dialog.v2/0.0.1368.872@0.0.1368.872" timestamp="1601896729697" />
-    <state x="368" y="261" key="com.intellij.ide.util.TipDialog" timestamp="1601977263799">
+    <state x="278" y="170" key="Vcs.Push.Dialog.v2/0.0.1368.872@0.0.1368.872" timestamp="1601988641459" />
+    <state x="368" y="261" key="com.intellij.ide.util.TipDialog" timestamp="1602048770584">
       <screen x="0" y="0" width="1368" height="872" />
     </state>
-    <state x="368" y="261" key="com.intellij.ide.util.TipDialog/0.0.1368.872@0.0.1368.872" timestamp="1601977263799" />
+    <state x="368" y="261" key="com.intellij.ide.util.TipDialog/0.0.1368.872@0.0.1368.872" timestamp="1602048770584" />
     <state x="351" y="188" width="672" height="678" key="search.everywhere.popup" timestamp="1601780840247">
       <screen x="0" y="0" width="1368" height="872" />
     </state>

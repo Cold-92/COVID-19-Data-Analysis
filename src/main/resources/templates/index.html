@@ -1,0 +1,422 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+      <meta charset="UTF-8">
+      <title>首页</title>
+      <link rel="stylesheet" th:href="@{css/bootstrap.css}">
+      <script type="text/javascript" src="js/echarts.min.js"></script>
+      <script type="text/javascript" src="http://echarts.baidu.com/gallery/vendors/echarts/echarts-all-3.js"></script>
+      <script type="text/javascript" src="js/china.js"></script>
+</head>
+<body>
+      <h1 th:text="#{web.totalTable.table.title}">中国各省份疫情统计</h1>
+      <div>
+            <a class="btn btn-sm" th:href="@{/totalTable(lan='ch_ZN')}">中文</a>
+            <a class="btn btn-sm" th:href="@{/totalTable(lan='en_US')}">英文</a>
+      </div>
+      <!-- totalTable -->
+      <table class="table table-hover">
+            <thead>
+            <tr>
+                  <th><span th:text="#{web.totalTable.table.subtitle.area}">地区</span></th>
+                  <th><span th:text="#{web.totalTable.table.subtitle.nowConfirm}">当前感染</span></th>
+                  <th><span th:text="#{web.totalTable.table.subtitle.confirm}">累计感染</span></th>
+                  <th><span th:text="#{web.totalTable.table.subtitle.dead}">死亡</span></th>
+                  <th><span th:text="#{web.totalTable.table.subtitle.heal}">治愈</span></th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr th:each="bean:${totalTableBeanList}">
+                  <td th:text="${bean.area}"></td>
+                  <td th:text="${bean.nowConfirm}"></td>
+                  <td th:text="${bean.confirm}"></td>
+                  <td th:text="${bean.dead}"></td>
+                  <td th:text="${bean.heal}"></td>
+            </tr>
+            </tbody>
+      </table>
+      <!-- nowConfirm -->
+      <div id="nowConfirm" style="width: 600px;height:400px;"></div>
+      <script type="text/javascript" th:inline="javascript">
+          // 基于准备好的dom，初始化echarts实例
+          let nowConfirmChart = echarts.init(document.getElementById('nowConfirm'));
+          // 使用thymeleaf接收后端传输的json字符串数据
+          let nowConfirmDateListStr = [[${nowConfirmDateList}]];
+          let nowConfirmListStr = [[${nowConfirmList}]];
+          // 指定图表的配置项和数据
+          let nowConfirmOption = {
+              // 标题组件
+              title: {
+                  text: '中国现有确诊趋势'
+              },
+              // 提示框组件
+              tooltip: {
+                  trigger: 'axis'
+              },
+              // 曲线含义说明
+              legend: {
+                  data: ['现有确诊']
+              },
+              xAxis: {
+                  type: 'category',
+                  boundaryGap: false,
+                  data: JSON.parse(nowConfirmDateListStr)
+                  // data: ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun']
+              },
+              yAxis: {
+                  // 表示折线图
+                  type: 'value'
+              },
+              series: [{
+                  name: '现有确诊',
+                  data: JSON.parse(nowConfirmListStr),
+                  // data: [820, 932, 901, 934, 1290, 1330, 1320],
+                  type: 'line',
+                  areaStyle: {}
+              }]
+          };
+          nowConfirmChart.setOption(nowConfirmOption);
+      </script>
+      <!-- newConfirm -->
+      <div id="newConfirm" style="width: 600px;height:400px;"></div>
+      <script type="text/javascript" th:inline="javascript">
+          // 基于准备好的dom，初始化echarts实例
+          let newConfirmChart = echarts.init(document.getElementById('newConfirm'));
+          // 使用thymeleaf接收后端传输的json字符串数据
+          let newConfirmDateListStr = [[${newConfirmDateList}]];
+          let newConfirmListStr = [[${newConfirmList}]];
+          let newSuspectListStr = [[${newSuspectList}]];
+          // 指定图表的配置项和数据
+          let newConfirmOption = {
+              title: {
+                  text: '全国疫情新增趋势'
+              },
+              tooltip: {
+                  trigger: 'axis'
+              },
+              legend: {
+                  data: ['新增确诊', '新增疑似']
+              },
+              grid: {
+                  left: '3%',
+                  right: '4%',
+                  bottom: '3%',
+                  containLabel: true
+              },
+              toolbox: {
+                  feature: {
+                      saveAsImage: {}
+                  }
+              },
+              xAxis: {
+                  type: 'category',
+                  boundaryGap: false,
+                  data: JSON.parse(newConfirmDateListStr)
+              },
+              yAxis: {
+                  type: 'value'
+              },
+              series: [
+                  {
+                      name: '新增确诊',
+                      type: 'line',
+                      data: JSON.parse(newConfirmListStr)
+                  },
+                  {
+                      name: '新增疑似',
+                      type: 'line',
+                      data: JSON.parse(newSuspectListStr)
+                  }
+              ]
+          };
+          newConfirmChart.setOption(newConfirmOption);
+      </script>
+      <!-- rate -->
+      <div id="rate" style="width: 600px;height:400px;"></div>
+      <script type="text/javascript" th:inline="javascript">
+          // 基于准备好的dom，初始化echarts实例
+          let rateChart = echarts.init(document.getElementById('rate'));
+          // 使用thymeleaf接收后端传输的json字符串数据
+          let rateDateListStr = [[${rateDateList}]];
+          let healRateListStr = [[${healRateList}]];
+          let deadRateListStr = [[${deadRateList}]];
+          // 指定图表的配置项和数据
+          let rateOption = {
+              title: {
+                  text: '治愈率/死亡率'
+              },
+              tooltip: {
+                  trigger: 'axis'
+              },
+              legend: {
+                  data: ['治愈率', '死亡率']
+              },
+              xAxis: {
+                  type: 'category',
+                  data: JSON.parse(rateDateListStr)
+              },
+              yAxis: {
+                  type: 'value'
+              },
+              series: [
+                  {
+                      name: '治愈率',
+                      type: 'line',
+                      data: JSON.parse(healRateListStr)
+                  },
+                  {
+                      name: '死亡率',
+                      type: 'line',
+                      data: JSON.parse(deadRateListStr)
+                  }
+              ]
+          };
+          rateChart.setOption(rateOption);
+      </script>
+      <!-- confirmHealDead -->
+      <div id="confirmHealDead" style="width: 750px;height:400px;"></div>
+      <script type="text/javascript" th:inline="javascript">
+          // 基于准备好的dom，初始化echarts实例
+          let confirmHealDeadChart = echarts.init(document.getElementById('confirmHealDead'));
+          // 使用thymeleaf接收后端传输的json字符串数据
+          let confirmHealDeadDateListStr = [[${confirmHealDeadDateList}]];
+          let confirmHealDeadConfirmListStr = [[${confirmHealDeadConfirmList}]];
+          let confirmHealDeadHealListStr = [[${confirmHealDeadHealList}]];
+          let confirmHealDeadDeadListStr = [[${confirmHealDeadDeadList}]];
+          // 指定图表的配置项和数据
+          let confirmHealDeadOption = {
+              title: {
+                  text: '全国累计确诊/治愈/死亡趋势'
+              },
+              tooltip: {
+                  trigger: 'axis'
+              },
+              legend: {
+                  data: ['累计确诊', '累计治愈', '累计死亡']
+              },
+              xAxis: {
+                  type: 'category',
+                  data: JSON.parse(confirmHealDeadDateListStr)
+              },
+              yAxis: {
+                  type: 'value'
+              },
+              series: [
+                  {
+                      name: '累计确诊',
+                      type: 'line',
+                      data: JSON.parse(confirmHealDeadConfirmListStr)
+                  },
+                  {
+                      name: '累计治愈',
+                      type: 'line',
+                      data: JSON.parse(confirmHealDeadHealListStr)
+                  },
+                  {
+                      name: '累计死亡',
+                      type: 'line',
+                      data: JSON.parse(confirmHealDeadDeadListStr)
+                  }
+              ]
+          };
+          // 使用刚指定的配置项和数据显示图表。
+          confirmHealDeadChart.setOption(confirmHealDeadOption);
+      </script>
+      <!-- nowConfirmConstitute -->
+      <div id="nowConfirmConstitute" style="width: 600px;height:400px;"></div>
+      <script type="text/javascript" th:inline="javascript">
+          // 基于准备好的dom，初始化echarts实例
+          let nowConfirmConstituteChart = echarts.init(document.getElementById('nowConfirmConstitute'));
+          // 使用thymeleaf接收后端传输的json字符串数据
+          let nowConfirmConstituteNameListStr = [[${nowConfirmConstituteNameList}]];
+          let nowConfirmConstituteBeanListStr = [[${nowConfirmConstituteBeanList}]];
+          // 指定图表的配置项和数据
+          let nowConfirmConstituteOption = {
+              title: {
+                  text: '全国现有确诊构成',
+                  subtext: '权威数据统计',
+                  left: 'center'
+              },
+              tooltip: {
+                  trigger: 'item',
+                  formatter: '{a} <br/>{b} : {c} ({d}%)'
+              },
+              legend: {
+                  orient: 'vertical',
+                  left: 'left',
+                  data: JSON.parse(nowConfirmConstituteNameListStr)
+              },
+              series: [
+                  {
+                      name: '访问来源',
+                      type: 'pie',
+                      radius: '55%',
+                      center: ['50%', '60%'],
+                      data: JSON.parse(nowConfirmConstituteBeanListStr),
+                      emphasis: {
+                          itemStyle: {
+                              shadowBlur: 10,
+                              shadowOffsetX: 0,
+                              shadowColor: 'rgba(0, 0, 0, 0.5)'
+                          }
+                      }
+                  }
+              ]
+          };
+          // 使用刚指定的配置项和数据显示图表。
+          nowConfirmConstituteChart.setOption(nowConfirmConstituteOption);
+      </script>
+      <!-- cityTop -->
+      <div id="cityTop" style="width: 600px;height:400px;"></div>
+      <script type="text/javascript" th:inline="javascript">
+          // 基于准备好的dom，初始化echarts实例
+          let cityTopChart = echarts.init(document.getElementById('cityTop'));
+          // 使用thymeleaf接收后端传输的json字符串数据
+          let cityTopNameListStr = [[${cityTopNameList}]];
+          let cityTopConfirmListStr = [[${cityTopConfirmList}]];
+          // 指定图表的配置项和数据
+          let cityTopOption = {
+              title: {
+                  text: '境外输入省市TOP10'
+              },
+              color: ['#3398DB'],
+              tooltip: {
+                  trigger: 'axis',
+                  axisPointer: {            // 坐标轴指示器，坐标轴触发有效
+                      type: 'shadow'        // 默认为直线，可选为：'line' | 'shadow'
+                  }
+              },
+              grid: {
+                  left: '3%',
+                  right: '4%',
+                  bottom: '3%',
+                  containLabel: true
+              },
+              xAxis: [
+                  {
+                      type: 'category',
+                      data: JSON.parse(cityTopNameListStr),
+                      axisTick: {
+                          alignWithLabel: true
+                      }
+                  }
+              ],
+              yAxis: [
+                  {
+                      type: 'value'
+                  }
+              ],
+              series: [
+                  {
+                      name: '累计输入确诊',
+                      type: 'bar',
+                      barWidth: '60%',
+                      data: JSON.parse(cityTopConfirmListStr)
+                  }
+              ]
+          };
+          cityTopChart.setOption(cityTopOption);
+      </script>
+      <!-- map -->
+      <div id="map" style="width:1000px;height:850px;"></div>
+      <script th:inline="javascript">
+          let mapBeanListStr = [[${mapBeanList}]];
+          mapOption = {
+              title: {
+                  text: '疫情地图',
+                  subtext: '权威数据',
+                  x: 'center'
+              },
+              tooltip: {
+                  trigger: 'item',
+                  formatter: function(e, t, n) {
+                      return .5 == e.value ? e.name + "：有疑似病例" : e.seriesName + "<br />" + e.name + "：" + e.value
+                  }
+              },
+              visualMap: {
+                  min: 0,
+                  max: 1000,
+                  left: 26,
+                  bottom: 40,
+                  showLabel: !0,
+                  text: ["高", "低"],
+                  pieces: [{
+                      gt: 100,
+                      label: "> 100 人",
+                      color: "#7f1100"
+                  }, {
+                      gte: 10,
+                      lte: 100,
+                      label: "10 - 100 人",
+                      color: "#ff5428"
+                  }, {
+                      gte: 1,
+                      lt: 10,
+                      label: "1 - 9 人",
+                      color: "#ff8c71"
+                  }, {
+                      gt: 0,
+                      lt: 1,
+                      label: "疑似",
+                      color: "#ffd768"
+                  }, {
+                      value: 0,
+                      color: "#ffffff"
+                  }],
+                  show: !0
+              },
+              geo: {
+                  map: "china",
+                  roam: !1,
+                  scaleLimit: {
+                      min: 1,
+                      max: 2
+                  },
+                  zoom: 1.23,
+                  top: 120,
+                  label: {
+                      normal: {
+                          show: !0,
+                          fontSize: "14",
+                          color: "rgba(0,0,0,0.7)"
+                      }
+                  },
+                  itemStyle: {
+                      normal: {
+                          borderColor: "#778899",//每个区域的边框色
+                      },
+                      emphasis: {
+                          areaColor: "#f2d5ad",
+                          shadowOffsetX: 0,
+                          shadowOffsetY: 0,
+                          borderWidth: 0
+                      }
+                  }
+              },
+              series: [{
+                  name: "确诊病例",
+                  type: "map",
+                  geoIndex: 0,
+                  mapType: 'china',
+                  roam: false,
+                  label: {
+                      normal: {
+                          // formatter: '{b}',
+                          position: 'center',
+                          show: true,
+                          textStyle: {
+                              color: 'rgba(0,0,0,0.4)'
+                          }
+                      },
+                      emphasis: {
+                          show: true
+                      }
+                  },
+                  data: JSON.parse(mapBeanListStr)
+              }]
+          };
+          let mapChart = echarts.init(document.getElementById("map"))
+          mapChart.setOption(mapOption)
+      </script>
+</body>
+</html>
