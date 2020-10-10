@@ -2,6 +2,7 @@ package org.cold92.controller;
 
 import com.google.gson.Gson;
 import org.cold92.bean.*;
+import org.cold92.handler.MailHandler;
 import org.cold92.handler.TencentDataHandler;
 import org.cold92.service.*;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -45,12 +46,12 @@ public class DataController {
 
     /**
      * 根據id的不同切換數據源,實現爬蟲的多數據源
-     * @param id 如果id=1，則使用tencent的數據源，如果id=2，使用cloveDoc的數據源
+     * @param flag 如果flag=1，則使用tencent的數據源，如果flag=2，使用cloveDoc的數據源
      * @return
      */
-    @GetMapping("/totalTable/{id}")
-    public String listById(Model model, @PathVariable int id) {
-        List<TotalTableBean> beanList = totalTableService.listById(id);
+    @GetMapping("/totalTable/{flag}")
+    public String listById(Model model, @PathVariable("flag") int flag) {
+        List<TotalTableBean> beanList = totalTableService.listByFlag(flag);
         model.addAttribute("beanList", beanList);
         return "totalTable.html";
     }

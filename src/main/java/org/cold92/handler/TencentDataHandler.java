@@ -41,6 +41,9 @@ public class TencentDataHandler {
     @Autowired
     private MapService mapService;
 
+    @Autowired
+    private MailHandler mailHandler;
+
     /**
      * 數據持久化（選擇騰訊數據源初始化數據）
      */
@@ -84,6 +87,7 @@ public class TencentDataHandler {
     @PostConstruct
     public void initData() {
         persistData();
+//        mailHandler.sendByTemplate();
     }
 
     /**

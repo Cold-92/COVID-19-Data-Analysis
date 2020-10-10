@@ -16,10 +16,25 @@ spring:
   # 配置国际化: 找到国际化文件的位置
   messages:
     basename: i18n.web
-
+  # 配置邮件环境信息
+  mail:
+    username: 326173115@qq.com
+    password: vzsvcjuudeoocbdc
+    host: smtp.qq.com
+    properties:
+      mail:
+        smtp:
+          ssl:
+            enable: true
 
 # 这两个配置可删除mybatis-config.xml并且替代上面的配置
-mybatis:
-  mapper-locations: classpath*:/mybatis/mapper/*.xml
-  type-aliases-package: org.cold92.bean
+#mybatis:
+#  mapper-locations: classpath*:/mybatis/mapper/*.xml
+#  type-aliases-package: org.cold92.bean
 
+# 让mybatis-plus显示sql语句
+mybatis-plus:
+  configuration:
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
+  # MP扫描枚举
+  type-enums-package: org.cold92.enums

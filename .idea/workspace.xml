@@ -1,16 +1,36 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="4d6679d1-4188-4f5b-a6a7-4028e50e61a0" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/index.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/templates/index.html" afterDir="false" />
+    <list default="true" id="4d6679d1-4188-4f5b-a6a7-4028e50e61a0" name="Default Changelist" comment="1.8: 增加数据总览">
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/cold92/bean/UserBean.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/cold92/config/MybatisPlusConfig.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/cold92/config/WebInterceptor.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/cold92/config/WebMvcConfig.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/cold92/controller/UserController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/cold92/handler/MailHandler.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/cold92/handler/WebMetaDateObjectHandler.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/cold92/mapper/UserMapper.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/cold92/service/UserService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/cold92/service/serviceImpl/UserServiceImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/cold92/util/JasyptUtil.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/login.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/mail.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/register.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/COVID-19-Data-Analysis.iml" beforeDir="false" afterPath="$PROJECT_DIR$/COVID-19-Data-Analysis.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/cold92/controller/DataController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/cold92/controller/DataController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/cold92/handler/TencentDataHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/cold92/handler/TencentDataHandler.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/newConfirmConstituteChart.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/newConfirmChart.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/cold92/service/TotalTableService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/cold92/service/TotalTableService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/cold92/service/serviceImpl/TotalTableServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/cold92/service/serviceImpl/TotalTableServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/totalTable.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/totalTable.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/org/cold92/DemoApplicationTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/org/cold92/DemoApplicationTests.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/application.yml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/org/cold92/controller/DataController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/org/cold92/controller/DataController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/templates/newConfirmConstituteChart.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/templates/newConfirmChart.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/org/cold92/handler/TencentDataHandler.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/org/cold92/handler/TencentDataHandler.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/templates/totalTable.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/templates/totalTable.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/org/cold92/DemoApplicationTests.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/org/cold92/DemoApplicationTests.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -23,8 +43,8 @@
         <option value="package.json" />
         <option value="JavaScript File" />
         <option value="Interface" />
-        <option value="Class" />
         <option value="HTML File" />
+        <option value="Class" />
       </list>
     </option>
   </component>
@@ -40,6 +60,8 @@
     <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
     <property name="DefaultHtmlFileTemplate" value="HTML File" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary" value="Groovy JUnit" />
+    <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.Groovy JUnit" value="groovy.util.GroovyTestCase" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
@@ -50,10 +72,16 @@
     <property name="settings.editor.selected.configurable" value="Errors" />
   </component>
   <component name="RecentsManager">
+    <key name="CreateTestDialog.RecentsKey">
+      <recent name="org.cold92.controller" />
+    </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="F:\git\gitSource\COVID-19-Data-Analysis\src\main\resources\static\js" />
       <recent name="F:\git\gitSource\COVID-19-Data-Analysis\src\main\resources\templates" />
       <recent name="F:\git\gitSource\COVID-19-Data-Analysis\src\main\resources\static" />
+    </key>
+    <key name="CreateTestDialog.Recents.Supers">
+      <recent name="groovy.util.GroovyTestCase" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="F:\git\gitSource\COVID-19-Data-Analysis\src\main\resources\i18n" />
@@ -64,13 +92,6 @@
     </key>
   </component>
   <component name="RunManager" selected="Application.DemoApplication">
-    <configuration name="CloveDocDataHandler" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="org.cold92.handler.CloveDocDataHandler" />
-      <module name="COVID-19-Data-Analysis" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <configuration name="DemoApplication" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="org.cold92.DemoApplication" />
       <module name="COVID-19-Data-Analysis" />
@@ -85,8 +106,15 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="HttpURLConnectionUtil" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="org.cold92.util.HttpURLConnectionUtil" />
+    <configuration name="JasyptUtil" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="org.cold92.util.JasyptUtil" />
+      <module name="COVID-19-Data-Analysis" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="MailHandler" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="org.cold92.handler.MailHandler" />
       <module name="COVID-19-Data-Analysis" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -102,10 +130,10 @@
     <recent_temporary>
       <list>
         <item itemvalue="Application.DemoApplication" />
+        <item itemvalue="Application.JasyptUtil" />
+        <item itemvalue="Application.MailHandler" />
         <item itemvalue="Application.TencentDataHandler" />
         <item itemvalue="Application.HttpClientUtil" />
-        <item itemvalue="Application.CloveDocDataHandler" />
-        <item itemvalue="Application.HttpURLConnectionUtil" />
       </list>
     </recent_temporary>
   </component>
@@ -171,7 +199,8 @@
     <MESSAGE value="1.5: 用图表对统计数据进行分析并展示" />
     <MESSAGE value="1.6: 完善使用图表对数据的分析" />
     <MESSAGE value="1.7: 调整数据爬取流程,实现浏览器国际化和手动国际化的功能" />
-    <option name="LAST_COMMIT_MESSAGE" value="1.7: 调整数据爬取流程,实现浏览器国际化和手动国际化的功能" />
+    <MESSAGE value="1.8: 增加数据总览" />
+    <option name="LAST_COMMIT_MESSAGE" value="1.8: 增加数据总览" />
   </component>
   <component name="WindowStateProjectService">
     <state x="140" y="92" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1601463352448">
@@ -182,38 +211,38 @@
       <screen x="0" y="0" width="1368" height="872" />
     </state>
     <state x="0" y="558" key="#com.intellij.ide.actions.DebugLogConfigureAction/0.0.1368.872@0.0.1368.872" timestamp="1601517781942" />
-    <state x="466" y="148" key="#com.intellij.ide.util.MemberChooser" timestamp="1601986975489">
+    <state x="466" y="148" key="#com.intellij.ide.util.MemberChooser" timestamp="1602337556363">
       <screen x="0" y="0" width="1368" height="872" />
     </state>
-    <state x="466" y="148" key="#com.intellij.ide.util.MemberChooser/0.0.1368.872@0.0.1368.872" timestamp="1601986975489" />
+    <state x="466" y="148" key="#com.intellij.ide.util.MemberChooser/0.0.1368.872@0.0.1368.872" timestamp="1602337556363" />
     <state x="237" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog" timestamp="1601919054044">
       <screen x="0" y="0" width="1368" height="872" />
     </state>
     <state x="237" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog/0.0.1368.872@0.0.1368.872" timestamp="1601919054044" />
-    <state x="297" y="27" width="877" height="782" key="CommitChangelistDialog2" timestamp="1601988625303">
+    <state x="297" y="27" width="877" height="782" key="CommitChangelistDialog2" timestamp="1602059923474">
       <screen x="0" y="0" width="1368" height="872" />
     </state>
-    <state x="297" y="27" width="877" height="782" key="CommitChangelistDialog2/0.0.1368.872@0.0.1368.872" timestamp="1601988625303" />
-    <state x="465" y="192" key="FileChooserDialogImpl" timestamp="1601989737918">
+    <state x="297" y="27" width="877" height="782" key="CommitChangelistDialog2/0.0.1368.872@0.0.1368.872" timestamp="1602059923474" />
+    <state x="465" y="192" key="FileChooserDialogImpl" timestamp="1602164219003">
       <screen x="0" y="0" width="1368" height="872" />
     </state>
-    <state x="465" y="192" key="FileChooserDialogImpl/0.0.1368.872@0.0.1368.872" timestamp="1601989737918" />
-    <state width="1326" height="2" key="GridCell.Tab.0.bottom" timestamp="1602056777795">
+    <state x="465" y="192" key="FileChooserDialogImpl/0.0.1368.872@0.0.1368.872" timestamp="1602164219003" />
+    <state width="1326" height="280" key="GridCell.Tab.0.bottom" timestamp="1602337621093">
       <screen x="0" y="0" width="1368" height="872" />
     </state>
-    <state width="1326" height="2" key="GridCell.Tab.0.bottom/0.0.1368.872@0.0.1368.872" timestamp="1602056777795" />
-    <state width="1326" height="2" key="GridCell.Tab.0.center" timestamp="1602056777795">
+    <state width="1326" height="280" key="GridCell.Tab.0.bottom/0.0.1368.872@0.0.1368.872" timestamp="1602337621093" />
+    <state width="1326" height="280" key="GridCell.Tab.0.center" timestamp="1602337621093">
       <screen x="0" y="0" width="1368" height="872" />
     </state>
-    <state width="1326" height="2" key="GridCell.Tab.0.center/0.0.1368.872@0.0.1368.872" timestamp="1602056777795" />
-    <state width="1326" height="2" key="GridCell.Tab.0.left" timestamp="1602056777795">
+    <state width="1326" height="280" key="GridCell.Tab.0.center/0.0.1368.872@0.0.1368.872" timestamp="1602337621093" />
+    <state width="1326" height="280" key="GridCell.Tab.0.left" timestamp="1602337621093">
       <screen x="0" y="0" width="1368" height="872" />
     </state>
-    <state width="1326" height="2" key="GridCell.Tab.0.left/0.0.1368.872@0.0.1368.872" timestamp="1602056777795" />
-    <state width="1326" height="2" key="GridCell.Tab.0.right" timestamp="1602056777795">
+    <state width="1326" height="280" key="GridCell.Tab.0.left/0.0.1368.872@0.0.1368.872" timestamp="1602337621093" />
+    <state width="1326" height="280" key="GridCell.Tab.0.right" timestamp="1602337621093">
       <screen x="0" y="0" width="1368" height="872" />
     </state>
-    <state width="1326" height="2" key="GridCell.Tab.0.right/0.0.1368.872@0.0.1368.872" timestamp="1602056777795" />
+    <state width="1326" height="280" key="GridCell.Tab.0.right/0.0.1368.872@0.0.1368.872" timestamp="1602337621093" />
     <state width="1326" height="312" key="GridCell.Tab.1.bottom" timestamp="1601814699934">
       <screen x="0" y="0" width="1368" height="872" />
     </state>
@@ -234,17 +263,21 @@
       <screen x="0" y="0" width="1368" height="872" />
     </state>
     <state x="224" y="118" key="SettingsEditor/0.0.1368.872@0.0.1368.872" timestamp="1602057902066" />
-    <state x="278" y="170" key="Vcs.Push.Dialog.v2" timestamp="1601988641459">
+    <state x="278" y="170" key="Vcs.Push.Dialog.v2" timestamp="1602059931130">
       <screen x="0" y="0" width="1368" height="872" />
     </state>
-    <state x="278" y="170" key="Vcs.Push.Dialog.v2/0.0.1368.872@0.0.1368.872" timestamp="1601988641459" />
-    <state x="368" y="261" key="com.intellij.ide.util.TipDialog" timestamp="1602048770584">
+    <state x="278" y="170" key="Vcs.Push.Dialog.v2/0.0.1368.872@0.0.1368.872" timestamp="1602059931130" />
+    <state x="368" y="261" key="com.intellij.ide.util.TipDialog" timestamp="1602299073692">
       <screen x="0" y="0" width="1368" height="872" />
     </state>
-    <state x="368" y="261" key="com.intellij.ide.util.TipDialog/0.0.1368.872@0.0.1368.872" timestamp="1602048770584" />
-    <state x="351" y="188" width="672" height="678" key="search.everywhere.popup" timestamp="1601780840247">
+    <state x="368" y="261" key="com.intellij.ide.util.TipDialog/0.0.1368.872@0.0.1368.872" timestamp="1602299073692" />
+    <state x="448" y="139" key="com.intellij.testIntegration.createTest.CreateTestDialog" timestamp="1602321947537">
       <screen x="0" y="0" width="1368" height="872" />
     </state>
-    <state x="351" y="188" width="672" height="678" key="search.everywhere.popup/0.0.1368.872@0.0.1368.872" timestamp="1601780840247" />
+    <state x="448" y="139" key="com.intellij.testIntegration.createTest.CreateTestDialog/0.0.1368.872@0.0.1368.872" timestamp="1602321947537" />
+    <state x="352" y="189" width="672" height="678" key="search.everywhere.popup" timestamp="1602178224019">
+      <screen x="0" y="0" width="1368" height="872" />
+    </state>
+    <state x="352" y="189" width="672" height="678" key="search.everywhere.popup/0.0.1368.872@0.0.1368.872" timestamp="1602178224019" />
   </component>
 </project>
