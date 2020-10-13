@@ -82,12 +82,11 @@ public class TencentDataHandler {
 
     /**
      * 程序运行时，自动持久化实时数据
-     * @PostConstruct：該方法在服務器加載servlet時執行，只執行一次，在init()之前調用
+     * @PostConstruct：该方法在服务器加載servlet时执行，只执行一次，在init()之前调用
      */
-    @PostConstruct
+//    @PostConstruct
     public void initData() {
         persistData();
-//        mailHandler.sendByTemplate();
     }
 
     /**

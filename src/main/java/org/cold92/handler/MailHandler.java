@@ -7,6 +7,7 @@ import org.springframework.mail.SimpleMailMessage;
 
 import org.springframework.mail.javamail.JavaMailSender;
 import org.springframework.mail.javamail.MimeMessageHelper;
+import org.springframework.scheduling.annotation.Async;
 import org.springframework.stereotype.Component;
 import org.thymeleaf.TemplateEngine;
 import org.thymeleaf.context.Context;
@@ -46,7 +47,9 @@ public class MailHandler {
 
     /**
      * 发送复杂邮件: 使用thymeleaf渲染一个html页面作为邮件内容
+     * @Async 表示该方法为异步任务，要实现的逻辑为先返回‘发送成功’信息再执行发送方法，在分布式中运用
      */
+    @Async
     public void sendByTemplate() {
         List<String> list = new ArrayList<>();
         list.add("人生重要的，不是能力而是性格；不是成功而是价值；不是你认识多少人，而是在你离开人世时，有多少人认识了你！不是他所购买到的，而是他所创造的；不是他所得到的，而是他所付出的；不是他所学到的，而是他所传授的。");
@@ -76,6 +79,7 @@ public class MailHandler {
             helper.setFrom("326173115@qq.com");
             helper.setTo("229267322@qq.com");
             helper.setTo("1606988616@qq.com");
+            helper.setTo("201800995@qq.com");
             //可以批量发送
 //            helper.setTo("973205592@qq.com");
 //            helper.setTo("876418599@qq.com");

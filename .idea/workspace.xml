@@ -1,36 +1,44 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="4d6679d1-4188-4f5b-a6a7-4028e50e61a0" name="Default Changelist" comment="1.8: 增加数据总览">
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/cold92/bean/UserBean.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/cold92/config/MybatisPlusConfig.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/cold92/config/WebInterceptor.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/cold92/config/WebMvcConfig.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/cold92/controller/UserController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/cold92/handler/MailHandler.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/cold92/handler/WebMetaDateObjectHandler.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/cold92/mapper/UserMapper.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/cold92/service/UserService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/cold92/service/serviceImpl/UserServiceImpl.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/cold92/util/JasyptUtil.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/login.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/mail.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/register.html" afterDir="false" />
+    <list default="true" id="4d6679d1-4188-4f5b-a6a7-4028e50e61a0" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/cold92/bean/PermissionBean.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/cold92/config/SecurityConfig.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/cold92/controller/MailController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/cold92/controller/TestController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/cold92/mapper/PermissionMapper.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/cold92/service/PermissionService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/cold92/service/serviceImpl/PermissionServiceImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/error/404.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/error/4xx.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/error/500.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/error/5xx.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_mybatis_mybatis_3_5_5.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_mybatis_mybatis_spring_2_0_5.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_mybatis_spring_boot_mybatis_spring_boot_autoconfigure_2_1_3.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_mybatis_spring_boot_mybatis_spring_boot_starter_2_1_3.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/COVID-19-Data-Analysis.iml" beforeDir="false" afterPath="$PROJECT_DIR$/COVID-19-Data-Analysis.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/cold92/controller/DataController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/cold92/controller/DataController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/cold92/DemoApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/cold92/DemoApplication.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/cold92/bean/UserBean.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/cold92/bean/UserBean.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/cold92/config/WebInterceptor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/cold92/config/WebInterceptor.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/cold92/config/WebMvcConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/cold92/config/WebMvcConfig.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/cold92/controller/UserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/cold92/controller/UserController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/cold92/handler/MailHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/cold92/handler/MailHandler.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/cold92/handler/TencentDataHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/cold92/handler/TencentDataHandler.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/cold92/service/TotalTableService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/cold92/service/TotalTableService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/cold92/service/serviceImpl/TotalTableServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/cold92/service/serviceImpl/TotalTableServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/cold92/service/UserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/cold92/service/UserService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/cold92/service/serviceImpl/UserServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/cold92/service/serviceImpl/UserServiceImpl.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/totalTable.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/totalTable.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/org/cold92/DemoApplicationTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/org/cold92/DemoApplicationTests.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/application.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/org/cold92/controller/DataController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/org/cold92/controller/DataController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/org/cold92/DemoApplication.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/org/cold92/DemoApplication.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/org/cold92/bean/UserBean.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/org/cold92/bean/UserBean.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/org/cold92/config/WebInterceptor.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/org/cold92/config/WebInterceptor.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/org/cold92/config/WebMvcConfig.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/org/cold92/config/WebMvcConfig.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/org/cold92/controller/UserController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/org/cold92/controller/UserController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/org/cold92/handler/MailHandler.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/org/cold92/handler/MailHandler.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/org/cold92/handler/TencentDataHandler.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/org/cold92/handler/TencentDataHandler.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/templates/totalTable.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/templates/totalTable.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/org/cold92/DemoApplicationTests.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/org/cold92/DemoApplicationTests.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/org/cold92/service/serviceImpl/UserServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/org/cold92/service/serviceImpl/UserServiceImpl.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -50,6 +58,13 @@
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="MavenImportPreferences">
+    <option name="importingSettings">
+      <MavenImportingSettings>
+        <option name="importAutomatically" value="true" />
+      </MavenImportingSettings>
+    </option>
   </component>
   <component name="ProjectId" id="1iC6mrsr7RXGhKTLfwlnMjLjSM1" />
   <component name="ProjectViewState">
@@ -200,7 +215,8 @@
     <MESSAGE value="1.6: 完善使用图表对数据的分析" />
     <MESSAGE value="1.7: 调整数据爬取流程,实现浏览器国际化和手动国际化的功能" />
     <MESSAGE value="1.8: 增加数据总览" />
-    <option name="LAST_COMMIT_MESSAGE" value="1.8: 增加数据总览" />
+    <MESSAGE value="1.9: 增加登录注册相关业务(拦截器，加密), 重构MP的Service层代码" />
+    <option name="LAST_COMMIT_MESSAGE" value="1.9: 增加登录注册相关业务(拦截器，加密), 重构MP的Service层代码" />
   </component>
   <component name="WindowStateProjectService">
     <state x="140" y="92" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1601463352448">
@@ -211,38 +227,38 @@
       <screen x="0" y="0" width="1368" height="872" />
     </state>
     <state x="0" y="558" key="#com.intellij.ide.actions.DebugLogConfigureAction/0.0.1368.872@0.0.1368.872" timestamp="1601517781942" />
-    <state x="466" y="148" key="#com.intellij.ide.util.MemberChooser" timestamp="1602337556363">
+    <state x="466" y="148" key="#com.intellij.ide.util.MemberChooser" timestamp="1602587021211">
       <screen x="0" y="0" width="1368" height="872" />
     </state>
-    <state x="466" y="148" key="#com.intellij.ide.util.MemberChooser/0.0.1368.872@0.0.1368.872" timestamp="1602337556363" />
+    <state x="466" y="148" key="#com.intellij.ide.util.MemberChooser/0.0.1368.872@0.0.1368.872" timestamp="1602587021211" />
     <state x="237" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog" timestamp="1601919054044">
       <screen x="0" y="0" width="1368" height="872" />
     </state>
     <state x="237" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog/0.0.1368.872@0.0.1368.872" timestamp="1601919054044" />
-    <state x="297" y="27" width="877" height="782" key="CommitChangelistDialog2" timestamp="1602059923474">
+    <state x="297" y="27" width="877" height="782" key="CommitChangelistDialog2" timestamp="1602337786965">
       <screen x="0" y="0" width="1368" height="872" />
     </state>
-    <state x="297" y="27" width="877" height="782" key="CommitChangelistDialog2/0.0.1368.872@0.0.1368.872" timestamp="1602059923474" />
-    <state x="465" y="192" key="FileChooserDialogImpl" timestamp="1602164219003">
+    <state x="297" y="27" width="877" height="782" key="CommitChangelistDialog2/0.0.1368.872@0.0.1368.872" timestamp="1602337786965" />
+    <state x="465" y="192" key="FileChooserDialogImpl" timestamp="1602468678622">
       <screen x="0" y="0" width="1368" height="872" />
     </state>
-    <state x="465" y="192" key="FileChooserDialogImpl/0.0.1368.872@0.0.1368.872" timestamp="1602164219003" />
-    <state width="1326" height="280" key="GridCell.Tab.0.bottom" timestamp="1602337621093">
+    <state x="465" y="192" key="FileChooserDialogImpl/0.0.1368.872@0.0.1368.872" timestamp="1602468678622" />
+    <state width="1326" height="47" key="GridCell.Tab.0.bottom" timestamp="1602597795285">
       <screen x="0" y="0" width="1368" height="872" />
     </state>
-    <state width="1326" height="280" key="GridCell.Tab.0.bottom/0.0.1368.872@0.0.1368.872" timestamp="1602337621093" />
-    <state width="1326" height="280" key="GridCell.Tab.0.center" timestamp="1602337621093">
+    <state width="1326" height="47" key="GridCell.Tab.0.bottom/0.0.1368.872@0.0.1368.872" timestamp="1602597795285" />
+    <state width="1326" height="47" key="GridCell.Tab.0.center" timestamp="1602597795285">
       <screen x="0" y="0" width="1368" height="872" />
     </state>
-    <state width="1326" height="280" key="GridCell.Tab.0.center/0.0.1368.872@0.0.1368.872" timestamp="1602337621093" />
-    <state width="1326" height="280" key="GridCell.Tab.0.left" timestamp="1602337621093">
+    <state width="1326" height="47" key="GridCell.Tab.0.center/0.0.1368.872@0.0.1368.872" timestamp="1602597795285" />
+    <state width="1326" height="47" key="GridCell.Tab.0.left" timestamp="1602597795285">
       <screen x="0" y="0" width="1368" height="872" />
     </state>
-    <state width="1326" height="280" key="GridCell.Tab.0.left/0.0.1368.872@0.0.1368.872" timestamp="1602337621093" />
-    <state width="1326" height="280" key="GridCell.Tab.0.right" timestamp="1602337621093">
+    <state width="1326" height="47" key="GridCell.Tab.0.left/0.0.1368.872@0.0.1368.872" timestamp="1602597795285" />
+    <state width="1326" height="47" key="GridCell.Tab.0.right" timestamp="1602597795285">
       <screen x="0" y="0" width="1368" height="872" />
     </state>
-    <state width="1326" height="280" key="GridCell.Tab.0.right/0.0.1368.872@0.0.1368.872" timestamp="1602337621093" />
+    <state width="1326" height="47" key="GridCell.Tab.0.right/0.0.1368.872@0.0.1368.872" timestamp="1602597795285" />
     <state width="1326" height="312" key="GridCell.Tab.1.bottom" timestamp="1601814699934">
       <screen x="0" y="0" width="1368" height="872" />
     </state>
@@ -263,21 +279,21 @@
       <screen x="0" y="0" width="1368" height="872" />
     </state>
     <state x="224" y="118" key="SettingsEditor/0.0.1368.872@0.0.1368.872" timestamp="1602057902066" />
-    <state x="278" y="170" key="Vcs.Push.Dialog.v2" timestamp="1602059931130">
+    <state x="278" y="170" key="Vcs.Push.Dialog.v2" timestamp="1602337795753">
       <screen x="0" y="0" width="1368" height="872" />
     </state>
-    <state x="278" y="170" key="Vcs.Push.Dialog.v2/0.0.1368.872@0.0.1368.872" timestamp="1602059931130" />
-    <state x="368" y="261" key="com.intellij.ide.util.TipDialog" timestamp="1602299073692">
+    <state x="278" y="170" key="Vcs.Push.Dialog.v2/0.0.1368.872@0.0.1368.872" timestamp="1602337795753" />
+    <state x="368" y="261" key="com.intellij.ide.util.TipDialog" timestamp="1602603829306">
       <screen x="0" y="0" width="1368" height="872" />
     </state>
-    <state x="368" y="261" key="com.intellij.ide.util.TipDialog/0.0.1368.872@0.0.1368.872" timestamp="1602299073692" />
+    <state x="368" y="261" key="com.intellij.ide.util.TipDialog/0.0.1368.872@0.0.1368.872" timestamp="1602603829306" />
     <state x="448" y="139" key="com.intellij.testIntegration.createTest.CreateTestDialog" timestamp="1602321947537">
       <screen x="0" y="0" width="1368" height="872" />
     </state>
     <state x="448" y="139" key="com.intellij.testIntegration.createTest.CreateTestDialog/0.0.1368.872@0.0.1368.872" timestamp="1602321947537" />
-    <state x="352" y="189" width="672" height="678" key="search.everywhere.popup" timestamp="1602178224019">
+    <state x="353" y="190" width="672" height="678" key="search.everywhere.popup" timestamp="1602507642407">
       <screen x="0" y="0" width="1368" height="872" />
     </state>
-    <state x="352" y="189" width="672" height="678" key="search.everywhere.popup/0.0.1368.872@0.0.1368.872" timestamp="1602178224019" />
+    <state x="353" y="190" width="672" height="678" key="search.everywhere.popup/0.0.1368.872@0.0.1368.872" timestamp="1602507642407" />
   </component>
 </project>

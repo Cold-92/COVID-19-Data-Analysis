@@ -6,14 +6,18 @@ import com.baomidou.mybatisplus.annotation.TableName;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+import org.springframework.context.annotation.Role;
+import org.springframework.security.core.GrantedAuthority;
 
+import java.io.Serializable;
 import java.util.Date;
+import java.util.List;
 
-@Data
-@AllArgsConstructor @NoArgsConstructor
+@Data @AllArgsConstructor @NoArgsConstructor
 @TableName("user")
-public class UserBean {
+public class UserBean implements Serializable {
 
+   private int id;
    private String userName;
    private String password;
    private String email;
@@ -23,4 +27,7 @@ public class UserBean {
    // 插入和更新时MP自动给update_date字段赋值
    @TableField(fill = FieldFill.INSERT_UPDATE)
    private Date updateTime;
+   // 表示该属性不为数据库表字段，但又是必须使用的
+   @TableField(exist = false)
+   private List<GrantedAuthority> authorities;
 }

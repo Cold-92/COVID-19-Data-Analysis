@@ -1,8 +1,8 @@
 package org.cold92.service.serviceImpl;
 
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
-import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
 import org.cold92.bean.UserBean;
+import org.cold92.mapper.PermissionMapper;
 import org.cold92.mapper.UserMapper;
 import org.cold92.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -10,6 +10,7 @@ import org.springframework.stereotype.Service;
 
 /**
  * 该Service类区别与图表Service类，该类的主要操作依靠Mapper来实现
+ * UserDetailsService接口用于返回用户相关数据
  */
 @Service
 public class UserServiceImpl implements UserService {

@@ -27,10 +27,12 @@ spring:
           ssl:
             enable: true
 
+
 # 这两个配置可删除mybatis-config.xml并且替代上面的配置
 #mybatis:
 #  mapper-locations: classpath*:/mybatis/mapper/*.xml
 #  type-aliases-package: org.cold92.bean
+
 
 # 让mybatis-plus显示sql语句
 mybatis-plus:
