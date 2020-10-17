@@ -26,6 +26,13 @@ spring:
         smtp:
           ssl:
             enable: true
+  thymeleaf:
+    # 定位模板的目录,给返回的页面添加后缀名
+    prefix: classpath:/templates/
+    suffix: .html
+    servlet:
+      content-type: text/html
+    mode: HTML5
 
 
 # 这两个配置可删除mybatis-config.xml并且替代上面的配置
@@ -36,7 +43,7 @@ spring:
 
 # 让mybatis-plus显示sql语句
 mybatis-plus:
-  configuration:
-    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
+#  configuration:
+#    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
   # MP扫描枚举
   type-enums-package: org.cold92.enums

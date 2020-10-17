@@ -2,43 +2,68 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="4d6679d1-4188-4f5b-a6a7-4028e50e61a0" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/cold92/bean/PermissionBean.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/cold92/config/SecurityConfig.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/cold92/controller/MailController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/cold92/controller/TestController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/cold92/mapper/PermissionMapper.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/cold92/service/PermissionService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/cold92/service/serviceImpl/PermissionServiceImpl.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/error/404.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/error/4xx.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/error/500.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/error/5xx.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_mybatis_mybatis_3_5_5.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_mybatis_mybatis_spring_2_0_5.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_mybatis_spring_boot_mybatis_spring_boot_autoconfigure_2_1_3.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_mybatis_spring_boot_mybatis_spring_boot_starter_2_1_3.xml" beforeDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/cold92/controller/ErrorController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/cold92/handler/ModelMetaObjectHandler.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/css/errorPage.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/images/errorBackground.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/images/rocket.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/images/steam.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/js/errorPage.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/org/cold92/controller/ErrorController.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/org/cold92/handler/ModelMetaObjectHandler.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/css/errorPage.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/images/errorBackground.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/images/rocket.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/images/steam.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/js/errorPage.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/COVID-19-Data-Analysis.iml" beforeDir="false" afterPath="$PROJECT_DIR$/COVID-19-Data-Analysis.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/cold92/DemoApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/cold92/DemoApplication.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/cold92/bean/PermissionBean.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/cold92/bean/UserBean.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/cold92/bean/UserBean.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/cold92/config/WebInterceptor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/cold92/config/WebInterceptor.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/cold92/config/MybatisPlusConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/cold92/config/MybatisPlusConfig.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/cold92/config/WebConfig.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/cold92/config/WebMvcConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/cold92/config/WebMvcConfig.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/cold92/config/WebSecurityConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/cold92/config/WebSecurityConfig.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/cold92/controller/DataController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/cold92/controller/DataController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/cold92/controller/TestController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/cold92/controller/TestController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/cold92/controller/UserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/cold92/controller/UserController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/cold92/handler/MailHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/cold92/handler/MailHandler.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/cold92/handler/TencentDataHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/cold92/handler/TencentDataHandler.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/cold92/handler/WebMetaDateObjectHandler.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/cold92/mapper/PermissionMapper.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/cold92/mapper/UserMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/cold92/mapper/UserMapper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/cold92/service/PermissionService.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/cold92/service/UserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/cold92/service/UserService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/cold92/service/serviceImpl/PermissionServiceImpl.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/cold92/service/serviceImpl/UserServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/cold92/service/serviceImpl/UserServiceImpl.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/error/404.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/error/404.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/error/4xx.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/error/4xx.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/error/500.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/error/500.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/error/5xx.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/error/5xx.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/login.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/login.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/register.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/register.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/org/cold92/DemoApplicationTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/org/cold92/DemoApplicationTests.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/application.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/org/cold92/DemoApplication.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/org/cold92/DemoApplication.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/org/cold92/bean/PermissionBean.class" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/org/cold92/bean/UserBean.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/org/cold92/bean/UserBean.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/org/cold92/config/WebInterceptor.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/org/cold92/config/WebInterceptor.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/org/cold92/config/MybatisPlusConfig.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/org/cold92/config/MybatisPlusConfig.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/org/cold92/config/WebConfig.class" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/org/cold92/config/WebMvcConfig.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/org/cold92/config/WebMvcConfig.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/org/cold92/config/WebSecurityConfig.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/org/cold92/config/WebSecurityConfig.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/org/cold92/controller/DataController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/org/cold92/controller/DataController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/org/cold92/controller/TestController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/org/cold92/controller/TestController.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/org/cold92/controller/UserController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/org/cold92/controller/UserController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/org/cold92/handler/MailHandler.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/org/cold92/handler/MailHandler.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/org/cold92/handler/TencentDataHandler.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/org/cold92/handler/TencentDataHandler.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/org/cold92/handler/WebMetaDateObjectHandler.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/org/cold92/mapper/PermissionMapper.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/org/cold92/service/PermissionService.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/org/cold92/service/UserService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/org/cold92/service/UserService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/org/cold92/service/serviceImpl/PermissionServiceImpl.class" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/org/cold92/service/serviceImpl/UserServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/org/cold92/service/serviceImpl/UserServiceImpl.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/templates/error/404.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/templates/error/404.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/templates/error/4xx.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/templates/error/4xx.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/templates/error/500.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/templates/error/500.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/templates/error/5xx.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/templates/error/5xx.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/templates/login.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/templates/login.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/templates/register.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/templates/register.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/org/cold92/DemoApplicationTests.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/org/cold92/DemoApplicationTests.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -77,7 +102,7 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary" value="Groovy JUnit" />
     <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.Groovy JUnit" value="groovy.util.GroovyTestCase" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/main/resources/static/js" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
@@ -90,19 +115,20 @@
     <key name="CreateTestDialog.RecentsKey">
       <recent name="org.cold92.controller" />
     </key>
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="F:\git\gitSource\COVID-19-Data-Analysis\src\main\resources\static\js" />
-      <recent name="F:\git\gitSource\COVID-19-Data-Analysis\src\main\resources\templates" />
-      <recent name="F:\git\gitSource\COVID-19-Data-Analysis\src\main\resources\static" />
-    </key>
-    <key name="CreateTestDialog.Recents.Supers">
-      <recent name="groovy.util.GroovyTestCase" />
-    </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="F:\git\gitSource\COVID-19-Data-Analysis\src\main\resources\static\img" />
       <recent name="F:\git\gitSource\COVID-19-Data-Analysis\src\main\resources\i18n" />
       <recent name="F:\git\gitSource\COVID-19-Data-Analysis\src\main\resources\static\js" />
       <recent name="F:\git\gitSource\COVID-19-Data-Analysis\dataDemo" />
       <recent name="F:\git\gitSource\COVID-19-Data-Analysis\src\main\resources\static\css" />
+    </key>
+    <key name="CreateTestDialog.Recents.Supers">
+      <recent name="groovy.util.GroovyTestCase" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="F:\git\gitSource\COVID-19-Data-Analysis\src\main\resources\static\js" />
+      <recent name="F:\git\gitSource\COVID-19-Data-Analysis\src\main\resources\static\css" />
+      <recent name="F:\git\gitSource\COVID-19-Data-Analysis\src\main\resources\templates" />
       <recent name="F:\git\gitSource\COVID-19-Data-Analysis\src\main\resources\static" />
     </key>
   </component>
@@ -216,7 +242,8 @@
     <MESSAGE value="1.7: 调整数据爬取流程,实现浏览器国际化和手动国际化的功能" />
     <MESSAGE value="1.8: 增加数据总览" />
     <MESSAGE value="1.9: 增加登录注册相关业务(拦截器，加密), 重构MP的Service层代码" />
-    <option name="LAST_COMMIT_MESSAGE" value="1.9: 增加登录注册相关业务(拦截器，加密), 重构MP的Service层代码" />
+    <MESSAGE value="2.0: 使用spring-security添加用户权限模块" />
+    <option name="LAST_COMMIT_MESSAGE" value="2.0: 使用spring-security添加用户权限模块" />
   </component>
   <component name="WindowStateProjectService">
     <state x="140" y="92" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1601463352448">
@@ -227,38 +254,42 @@
       <screen x="0" y="0" width="1368" height="872" />
     </state>
     <state x="0" y="558" key="#com.intellij.ide.actions.DebugLogConfigureAction/0.0.1368.872@0.0.1368.872" timestamp="1601517781942" />
-    <state x="466" y="148" key="#com.intellij.ide.util.MemberChooser" timestamp="1602587021211">
+    <state x="466" y="148" key="#com.intellij.ide.util.MemberChooser" timestamp="1602758243598">
       <screen x="0" y="0" width="1368" height="872" />
     </state>
-    <state x="466" y="148" key="#com.intellij.ide.util.MemberChooser/0.0.1368.872@0.0.1368.872" timestamp="1602587021211" />
+    <state x="466" y="148" key="#com.intellij.ide.util.MemberChooser/0.0.1368.872@0.0.1368.872" timestamp="1602758243598" />
     <state x="237" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog" timestamp="1601919054044">
       <screen x="0" y="0" width="1368" height="872" />
     </state>
     <state x="237" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog/0.0.1368.872@0.0.1368.872" timestamp="1601919054044" />
-    <state x="297" y="27" width="877" height="782" key="CommitChangelistDialog2" timestamp="1602337786965">
+    <state x="79" y="206" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1602757414024">
       <screen x="0" y="0" width="1368" height="872" />
     </state>
-    <state x="297" y="27" width="877" height="782" key="CommitChangelistDialog2/0.0.1368.872@0.0.1368.872" timestamp="1602337786965" />
-    <state x="465" y="192" key="FileChooserDialogImpl" timestamp="1602468678622">
+    <state x="79" y="206" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1368.872@0.0.1368.872" timestamp="1602757414024" />
+    <state x="297" y="27" width="877" height="782" key="CommitChangelistDialog2" timestamp="1602609224571">
       <screen x="0" y="0" width="1368" height="872" />
     </state>
-    <state x="465" y="192" key="FileChooserDialogImpl/0.0.1368.872@0.0.1368.872" timestamp="1602468678622" />
-    <state width="1326" height="47" key="GridCell.Tab.0.bottom" timestamp="1602597795285">
+    <state x="297" y="27" width="877" height="782" key="CommitChangelistDialog2/0.0.1368.872@0.0.1368.872" timestamp="1602609224571" />
+    <state x="465" y="192" key="FileChooserDialogImpl" timestamp="1602669287917">
       <screen x="0" y="0" width="1368" height="872" />
     </state>
-    <state width="1326" height="47" key="GridCell.Tab.0.bottom/0.0.1368.872@0.0.1368.872" timestamp="1602597795285" />
-    <state width="1326" height="47" key="GridCell.Tab.0.center" timestamp="1602597795285">
+    <state x="465" y="192" key="FileChooserDialogImpl/0.0.1368.872@0.0.1368.872" timestamp="1602669287917" />
+    <state width="982" height="2" key="GridCell.Tab.0.bottom" timestamp="1602925810624">
       <screen x="0" y="0" width="1368" height="872" />
     </state>
-    <state width="1326" height="47" key="GridCell.Tab.0.center/0.0.1368.872@0.0.1368.872" timestamp="1602597795285" />
-    <state width="1326" height="47" key="GridCell.Tab.0.left" timestamp="1602597795285">
+    <state width="982" height="2" key="GridCell.Tab.0.bottom/0.0.1368.872@0.0.1368.872" timestamp="1602925810624" />
+    <state width="982" height="2" key="GridCell.Tab.0.center" timestamp="1602925810624">
       <screen x="0" y="0" width="1368" height="872" />
     </state>
-    <state width="1326" height="47" key="GridCell.Tab.0.left/0.0.1368.872@0.0.1368.872" timestamp="1602597795285" />
-    <state width="1326" height="47" key="GridCell.Tab.0.right" timestamp="1602597795285">
+    <state width="982" height="2" key="GridCell.Tab.0.center/0.0.1368.872@0.0.1368.872" timestamp="1602925810624" />
+    <state width="982" height="2" key="GridCell.Tab.0.left" timestamp="1602925810624">
       <screen x="0" y="0" width="1368" height="872" />
     </state>
-    <state width="1326" height="47" key="GridCell.Tab.0.right/0.0.1368.872@0.0.1368.872" timestamp="1602597795285" />
+    <state width="982" height="2" key="GridCell.Tab.0.left/0.0.1368.872@0.0.1368.872" timestamp="1602925810624" />
+    <state width="982" height="2" key="GridCell.Tab.0.right" timestamp="1602925810624">
+      <screen x="0" y="0" width="1368" height="872" />
+    </state>
+    <state width="982" height="2" key="GridCell.Tab.0.right/0.0.1368.872@0.0.1368.872" timestamp="1602925810624" />
     <state width="1326" height="312" key="GridCell.Tab.1.bottom" timestamp="1601814699934">
       <screen x="0" y="0" width="1368" height="872" />
     </state>
@@ -279,21 +310,21 @@
       <screen x="0" y="0" width="1368" height="872" />
     </state>
     <state x="224" y="118" key="SettingsEditor/0.0.1368.872@0.0.1368.872" timestamp="1602057902066" />
-    <state x="278" y="170" key="Vcs.Push.Dialog.v2" timestamp="1602337795753">
+    <state x="278" y="170" key="Vcs.Push.Dialog.v2" timestamp="1602609239422">
       <screen x="0" y="0" width="1368" height="872" />
     </state>
-    <state x="278" y="170" key="Vcs.Push.Dialog.v2/0.0.1368.872@0.0.1368.872" timestamp="1602337795753" />
-    <state x="368" y="261" key="com.intellij.ide.util.TipDialog" timestamp="1602603829306">
+    <state x="278" y="170" key="Vcs.Push.Dialog.v2/0.0.1368.872@0.0.1368.872" timestamp="1602609239422" />
+    <state x="368" y="261" key="com.intellij.ide.util.TipDialog" timestamp="1602867154822">
       <screen x="0" y="0" width="1368" height="872" />
     </state>
-    <state x="368" y="261" key="com.intellij.ide.util.TipDialog/0.0.1368.872@0.0.1368.872" timestamp="1602603829306" />
+    <state x="368" y="261" key="com.intellij.ide.util.TipDialog/0.0.1368.872@0.0.1368.872" timestamp="1602867154822" />
     <state x="448" y="139" key="com.intellij.testIntegration.createTest.CreateTestDialog" timestamp="1602321947537">
       <screen x="0" y="0" width="1368" height="872" />
     </state>
     <state x="448" y="139" key="com.intellij.testIntegration.createTest.CreateTestDialog/0.0.1368.872@0.0.1368.872" timestamp="1602321947537" />
-    <state x="353" y="190" width="672" height="678" key="search.everywhere.popup" timestamp="1602507642407">
+    <state x="354" y="190" width="672" height="678" key="search.everywhere.popup" timestamp="1602754111658">
       <screen x="0" y="0" width="1368" height="872" />
     </state>
-    <state x="353" y="190" width="672" height="678" key="search.everywhere.popup/0.0.1368.872@0.0.1368.872" timestamp="1602507642407" />
+    <state x="354" y="190" width="672" height="678" key="search.everywhere.popup/0.0.1368.872@0.0.1368.872" timestamp="1602754111658" />
   </component>
 </project>

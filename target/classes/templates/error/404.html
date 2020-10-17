@@ -1,10 +1,22 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
       <meta charset="UTF-8">
       <title>Title</title>
+      <link rel="stylesheet" type="text/css" th:href="@{css/errorPage.css}" />
+      <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js"></script>
+      <script src="js/errorPage.js"></script>
 </head>
 <body>
+      <div id="rocket"></div>
 
+      <hgroup>
+            <h1>Page Not Found 404</h1>
+            <h2>We couldn't find what you were looking for.</h2>
+      </hgroup>
+
+      <p class="createdBy">
+            <a href="http://tutorialzine.com/2010/08/animated-404-not-found-page-css-jquery/">Read &amp; Download on Tutorialzine &raquo;</a>
+      </p>
 </body>
 </html>

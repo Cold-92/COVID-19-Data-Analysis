@@ -285,6 +285,6 @@ public class DataController {
         // map数据解析
         List<MapBean> mapBeanList = mapService.list();
         model.addAttribute("mapBeanList", new Gson().toJson(mapBeanList));
-        return "index.html";
+        return "index";
     }
 }

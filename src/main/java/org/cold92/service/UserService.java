@@ -1,10 +1,11 @@
 package org.cold92.service;
 
 import org.cold92.bean.UserBean;
+import org.springframework.security.core.userdetails.UserDetailsService;
 
-public interface UserService {
+public interface UserService extends UserDetailsService {
 
     int insertUser(UserBean user);
 
-    UserBean getUserByName(String userName);
+    UserBean getUserByUsername(String username);
 }
