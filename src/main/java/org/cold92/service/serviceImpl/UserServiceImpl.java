@@ -62,6 +62,8 @@ public class UserServiceImpl implements UserService {
         if (user == null) {
             throw new UsernameNotFoundException("登录用户：" + username + "不存在");
         }
+        // 如果登录成功，将角色存入session
+        request.getSession().setAttribute("login-name", username);
         // 将数据库的role解析为UserDetails的权限集合
         // AuthorityUtils.commaSeparatedStringToAuthorityList将逗号分割的字符串转成权限对象集合
         // 在定义角色时，必须要加上ROLE前缀，在controller中使用角色时，不需要加

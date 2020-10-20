@@ -40,12 +40,14 @@ public class TencentDataHandler {
     private NowConfirmConstituteService nowConfirmConstituteService;
     @Autowired
     private MapService mapService;
+    @Autowired
+    private CityService cityService;
 
     @Autowired
     private MailHandler mailHandler;
 
     /**
-     * 數據持久化（選擇騰訊數據源初始化數據）
+     * 数据持久化（选择腾讯数据源持久化数据）
      */
     public void persistData() {
         try {
@@ -57,6 +59,7 @@ public class TencentDataHandler {
             List<CityTopBean> cityTopBeanList = getCityTopData();
             List<NowConfirmConstituteBean> nowConfirmConstituteBeanList = getNowConfirmConstituteData();
             List<MapBean> mapBeanList = getMapData();
+            List<CityBean> cityBeanList = getCityData();
             // 每次持久化数据之前，先清空本地数据
             totalTableService.remove(null);
             nowConfirmService.remove(null);
@@ -66,6 +69,7 @@ public class TencentDataHandler {
             cityTopService.remove(null);
             nowConfirmConstituteService.remove(null);
             mapService.remove(null);
+            cityService.remove(null);
             // 持久化数据到本地
             totalTableService.saveBatch(totalTableBeanList);
             nowConfirmService.saveBatch(nowConfirmBeanList);
@@ -75,6 +79,7 @@ public class TencentDataHandler {
             cityTopService.saveBatch(cityTopBeanList);
             nowConfirmConstituteService.saveBatch(nowConfirmConstituteBeanList);
             mapService.saveBatch(mapBeanList);
+            cityService.saveBatch(cityBeanList);
         } catch (Exception e) {
             e.printStackTrace();
         }
@@ -342,5 +347,66 @@ public class TencentDataHandler {
             beanList.add(bean);
         }
         return beanList;
+    }
+
+    /**
+     * 获取全国各个城市的疫情数据
+     * @return
+     */
+    public static List<CityBean> getCityData() {
+        Gson gson = new Gson();
+        List<CityBean> cityBeanList = new ArrayList<>();
+        String responseJson = HttpClientUtil.doGet(CHINA_TOTAL_DATA_TENCENT);
+        Map responseMap = gson.fromJson(responseJson, Map.class);
+        String dataStr = (String) responseMap.get("data");
+        Map dataMap = gson.fromJson(dataStr, Map.class);
+        List areaTree = (List) dataMap.get("areaTree");
+        Map areaTreeElement = (Map) areaTree.get(0);
+        List children = (List) areaTreeElement.get("children");
+        for (int i = 0; i < children.size(); i++) {
+            Map childrenMap = (Map) children.get(i);
+            String name = (String) childrenMap.get("name");
+            CityBean city = new CityBean();
+            // 判断是否为直辖市和特殊城市
+            if ("香港".equals(name) || "台湾".equals(name) || "上海".equals(name) || "北京".equals(name)
+                || "重庆".equals(name) || "天津".equals(name) || "澳门".equals(name)) {
+                Map totalMap = (Map) childrenMap.get("total");
+                double nowConfirm = (Double) totalMap.get("nowConfirm");
+                double confirm = (Double) totalMap.get("confirm");
+                double suspect = (Double) totalMap.get("suspect");
+                double dead = (Double) totalMap.get("dead");
+                double heal = (Double) totalMap.get("heal");
+                city.setArea(name);
+                city.setNowConfirm((int) nowConfirm);
+                city.setConfirm((int) confirm);
+                city.setSuspect((int) suspect);
+                city.setDead((int) dead);
+                city.setHeal((int) heal);
+                cityBeanList.add(city);
+            } else {
+                List subChildrenList = (List) childrenMap.get("children");
+                for (int j = 0; j < subChildrenList.size(); j++) {
+                    Map subChildrenMap = (Map) subChildrenList.get(j);
+                    String cityName = (String) subChildrenMap.get("name");
+                    if (!("境外输入".equals(cityName) || "地区待确认".equals(cityName))) {
+                        Map totalMap = (Map) subChildrenMap.get("total");
+                        CityBean subCity = new CityBean();
+                        double nowConfirm = (Double) totalMap.get("nowConfirm");
+                        double confirm = (Double) totalMap.get("confirm");
+                        double suspect = (Double) totalMap.get("suspect");
+                        double dead = (Double) totalMap.get("dead");
+                        double heal = (Double) totalMap.get("heal");
+                        subCity.setArea(cityName);
+                        subCity.setNowConfirm((int) nowConfirm);
+                        subCity.setConfirm((int) confirm);
+                        subCity.setSuspect((int) suspect);
+                        subCity.setDead((int) dead);
+                        subCity.setHeal((int) heal);
+                        cityBeanList.add(subCity);
+                    }
+                }
+            }
+        }
+        return cityBeanList;
     }
 }

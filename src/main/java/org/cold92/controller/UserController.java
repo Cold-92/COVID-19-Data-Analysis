@@ -28,7 +28,6 @@ public class UserController {
             //进行加密
             BCryptPasswordEncoder encoder =new BCryptPasswordEncoder();
             user.setPassword(encoder.encode(user.getPassword().trim()));
-            System.out.println(user);
             userService.insertUser(user);
         }
         return "redirect:/toLogin";
