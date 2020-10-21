@@ -4,6 +4,7 @@ import org.cold92.bean.CityBean;
 import org.cold92.bean.OrderBean;
 import org.cold92.service.CityService;
 import org.cold92.service.OrderService;
+import org.cold92.util.DateUtil;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.mail.SimpleMailMessage;
 
@@ -59,28 +60,34 @@ public class MailHandler {
     public void sendByTemplate() {
         try {
             List<OrderBean> orderBeanList = orderService.getAllOrders();
-            System.out.println(orderBeanList);
             for (OrderBean order : orderBeanList) {
                 String username = order.getUsername();
                 String email = order.getEmail();
                 String cityName = order.getCity();
                 CityBean city = cityService.getCityByName(cityName);
-                String content = "亲爱的" + username + "您好，以下是今日订阅疫情数据"
-                        + "城市：" + cityName + "当前感染人数：" + city.getNowConfirm()
-                        + "累计感染人数：" + city.getConfirm() + "疑似感染人数：" + city.getSuspect()
-                        + "累计治愈人数：" + city.getHeal() + "累计死亡人数：" + city.getDead();
+//                String content = "亲爱的" + username + "您好，以下是今日订阅疫情数据"
+//                        + "城市：" + cityName + "当前感染人数：" + city.getNowConfirm()
+//                        + "累计感染人数：" + city.getConfirm() + "疑似感染人数：" + city.getSuspect()
+//                        + "累计治愈人数：" + city.getHeal() + "累计死亡人数：" + city.getDead();
                 MimeMessage message = mailSender.createMimeMessage();
                 // 对MimeMessage的工具类, multipart: true表示支持附件
                 MimeMessageHelper helper = new MimeMessageHelper(message, true);
-                helper.setSubject("今日" + city + "疫情数据统计");
+                helper.setSubject("今日" + city.getArea() + "疫情数据统计");
                 // thymeleaf数据动态渲染所需要的上下文对象
                 Context context = new Context();
                 // 作为context渲染html数据的容器
                 Map<String, Object> map = new HashMap<>();
-                map.put("title", "今日" + city + "疫情数据统计");
+                map.put("title", "今日" + city.getArea() + "疫情数据统计");
                 // 邮件内容
-                map.put("content", content);
                 context.setVariables(map);
+                context.setVariable("username", username);
+                context.setVariable("city", cityName);
+                context.setVariable("nowConfirm", city.getNowConfirm());
+                context.setVariable("confirm", city.getConfirm());
+                context.setVariable("suspect", city.getSuspect());
+                context.setVariable("heal", city.getHeal());
+                context.setVariable("dead", city.getDead());
+                context.setVariable("date", DateUtil.getCurrentTime()); //获取当前时间
                 // 渲染出来最后的结果，真正要发送的邮件内容, template表示渲染的html
                 String result = this.engine.process("mail", context);
                 // html: true表示邮件内容是html不是纯文本
