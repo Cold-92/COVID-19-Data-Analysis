@@ -43,21 +43,23 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
                 .loginProcessingUrl("/login") // 表单中action的地址, 处理认证请求的路径
                 .usernameParameter("username") // 默认为username
                 .passwordParameter("password") // 默认为password
-                .defaultSuccessUrl("/index") // 登录成功跳转接口
+                .defaultSuccessUrl("/index", true) // 登录成功跳转接口
                 .failureUrl("/toLogin") // 登录失败跳转页面
                 .and() // 跳回配置文件父级上下文
             // 赋权
             .authorizeRequests() // 配置权限
-                .antMatchers("/toRegister", "/register", "/toLogin", "/login", "/css/**", "/js/**")
+                .antMatchers("/" ,"/toRegister", "/register", "/toLogin", "/login", "/css/**", "/js/**", "/favicon.ico")
                 .permitAll() // 上面url所有拦截器不拦截
-                .antMatchers("/read").hasAnyRole("admin", "user") // ROLE_admin和ROLE_user角色可以访问
-                .antMatchers("/update").hasRole("admin") // ROLE_admin角色可以访问
+                .antMatchers("/actuator", "/getAllUsers").hasRole("admin") // ROLE_admin角色可以访问
+                .antMatchers("/index", "/getUserByUsername", "/cancelUser", "/updateUser").hasAnyRole("admin", "user") // ROLE_admin和ROLE_user角色都可以访问
                 .anyRequest().authenticated(); // 上面两行url全部都拦截
 
         http
             // 注销
             .logout()
-                .logoutUrl("/logout");
+                .logoutUrl("/logout")
+                .invalidateHttpSession(true).
+                deleteCookies("remove");;
     }
 
     /**

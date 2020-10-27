@@ -24,8 +24,6 @@ public class OrderController {
     private CityService cityService;
     @Autowired
     private UserService userService;
-    @Autowired
-    private HttpServletRequest request;
 
     /**
      * 增加用户订阅记录
@@ -33,7 +31,7 @@ public class OrderController {
      * @return
      */
     @GetMapping("/insertOrder")
-    public void insertOrder(String cityName) {
+    public void insertOrder(HttpServletRequest request, String cityName) {
         String username = (String) request.getSession().getAttribute("login-username");
         String email = userService.getUserByUsername(username).getEmail();
         OrderBean order = new OrderBean();

@@ -51,12 +51,13 @@ public class MailHandler {
 
     /**
      * 发送复杂邮件: 使用thymeleaf渲染一个html页面作为邮件内容
+     * 每天中午12点发送
      * @Async 表示该方法为异步任务，要实现的逻辑为先返回‘发送成功’信息再执行发送方法，在分布式中运用
      * 定时自动持久化实时数据 (每一个小时持久化数据一次)
      * @Scheduled：使用cron表达式作为参数进行定时执行方法操作
      */
     @Async
-    @Scheduled(cron = "0/15 0/1 * * * ?")
+    @Scheduled(cron = "* * 3,12 1/1 * ?")
     public void sendByTemplate() {
         try {
             List<OrderBean> orderBeanList = orderService.getAllOrders();
@@ -65,10 +66,6 @@ public class MailHandler {
                 String email = order.getEmail();
                 String cityName = order.getCity();
                 CityBean city = cityService.getCityByName(cityName);
-//                String content = "亲爱的" + username + "您好，以下是今日订阅疫情数据"
-//                        + "城市：" + cityName + "当前感染人数：" + city.getNowConfirm()
-//                        + "累计感染人数：" + city.getConfirm() + "疑似感染人数：" + city.getSuspect()
-//                        + "累计治愈人数：" + city.getHeal() + "累计死亡人数：" + city.getDead();
                 MimeMessage message = mailSender.createMimeMessage();
                 // 对MimeMessage的工具类, multipart: true表示支持附件
                 MimeMessageHelper helper = new MimeMessageHelper(message, true);

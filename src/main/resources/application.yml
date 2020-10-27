@@ -47,3 +47,14 @@ mybatis-plus:
 #    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
   # MP扫描枚举
   type-enums-package: org.cold92.enums
+
+
+# Actuator监控项目
+# 以web形式暴露端点管理
+#management:
+#
+#
+#  endpoints:
+#    web:
+#      exposure:
+#        include: *
